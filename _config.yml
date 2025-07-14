@@ -1,0 +1,9 @@
+include: ['_pages']
+markdown: kramdown
+layouts_dir: ./static/_layouts
+theme: null
+
+collections:
+  pages:
+    output: true
+    permalink: /:path
