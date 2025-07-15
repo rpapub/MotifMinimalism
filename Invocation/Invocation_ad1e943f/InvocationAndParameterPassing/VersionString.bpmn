@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:uipath="http://uipath.org/schema/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="sample-diagram" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL" exporter="UiPath Studio Web (https://uipath.com)" exporterVersion="b1501e12">
+  <bpmn:process id="Process_1" name="InitializationWithVersionStringArgument" isExecutable="false">
+    <bpmn:extensionElements>
+      <uipath:variables version="v1">
+        <uipath:input id="vWhDfyu9V" name="Version" type="string" elementId="Event_start" default="v1" />
+        <uipath:inputOutput id="vL2i7i5eG" name="Version" type="string" elementId="Event_start" />
+      </uipath:variables>
+      <uipath:bindings version="v1">
+        <uipath:binding id="brM211DHF" name="folderPath" type="string" default="Solution Folder" resource="process" resourceKey="Solution Folder.MinimalMetapatternsUtils" propertyAttribute="folderPath" />
+        <uipath:binding id="bCLyWaimd" name="name" type="string" default="MinimalMetapatternsUtils" resource="process" resourceKey="Solution Folder.MinimalMetapatternsUtils" propertyAttribute="name" />
+      </uipath:bindings>
+    </bpmn:extensionElements>
+    <bpmn:startEvent id="Event_start" name="Start event VersionString">
+      <bpmn:extensionElements>
+        <uipath:entryPointId value="3af594a0-886d-4f14-8fba-a594b0827ccb" />
+        <uipath:mapping version="v1">
+          <uipath:type value="BPMN.Variables" version="v1" />
+          <uipath:output name="Version" type="string" source="=vars.vWhDfyu9V" var="vL2i7i5eG" />
+        </uipath:mapping>
+      </bpmn:extensionElements>
+      <bpmn:outgoing>edge_Event_start-Gateway_XEI5hzCTTg8q</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:exclusiveGateway id="Gateway_XEI5hz" name="VersionGateway" default="edge_Gateway_XEI5hz-Event_hwQSNt">
+      <bpmn:incoming>edge_Event_start-Gateway_XEI5hzCTTg8q</bpmn:incoming>
+      <bpmn:outgoing>edge_Gateway_XEI5hz-Activity_DEfbJq</bpmn:outgoing>
+      <bpmn:outgoing>edge_Gateway_XEI5hz-Activity_okhSKb</bpmn:outgoing>
+      <bpmn:outgoing>edge_Gateway_XEI5hz-Event_hwQSNt</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:subProcess id="Activity_DEfbJq" name="v1">
+      <bpmn:incoming>edge_Gateway_XEI5hz-Activity_DEfbJq</bpmn:incoming>
+      <bpmn:outgoing>edge_Activity_DEfbJq-Event_sSEE4Y</bpmn:outgoing>
+      <bpmn:startEvent id="Event_50Hr7G" name="DummyStartV1">
+        <bpmn:extensionElements>
+          <uipath:entryPointId value="2c66ee06-458f-4ab6-a62e-1f65694b423f" />
+        </bpmn:extensionElements>
+        <bpmn:outgoing>edge_Event_50Hr7G-Activity_nqcGUh</bpmn:outgoing>
+      </bpmn:startEvent>
+      <bpmn:task id="Activity_nqcGUh" name="DummyTaskV1">
+        <bpmn:incoming>edge_Event_50Hr7G-Activity_nqcGUh</bpmn:incoming>
+        <bpmn:outgoing>edge_Activity_nqcGUh-Event_mtGAUe</bpmn:outgoing>
+      </bpmn:task>
+      <bpmn:endEvent id="Event_mtGAUe" name="DummyEndV1">
+        <bpmn:incoming>edge_Activity_nqcGUh-Event_mtGAUe</bpmn:incoming>
+      </bpmn:endEvent>
+      <bpmn:sequenceFlow id="edge_Event_50Hr7G-Activity_nqcGUh" sourceRef="Event_50Hr7G" targetRef="Activity_nqcGUh" />
+      <bpmn:sequenceFlow id="edge_Activity_nqcGUh-Event_mtGAUe" sourceRef="Activity_nqcGUh" targetRef="Event_mtGAUe" />
+    </bpmn:subProcess>
+    <bpmn:subProcess id="Activity_okhSKb" name="v2">
+      <bpmn:incoming>edge_Gateway_XEI5hz-Activity_okhSKb</bpmn:incoming>
+      <bpmn:outgoing>edge_Activity_okhSKb-Event_ZYYbqd</bpmn:outgoing>
+      <bpmn:startEvent id="Event_Jplwm3" name="DummyStartV2">
+        <bpmn:extensionElements>
+          <uipath:entryPointId value="7ff6638d-78a9-4daf-9a0e-5a62fc85153d" />
+        </bpmn:extensionElements>
+        <bpmn:outgoing>edge_Event_Jplwm3-Activity_cTGEvh</bpmn:outgoing>
+      </bpmn:startEvent>
+      <bpmn:task id="Activity_cTGEvh" name="DummyTaskV2">
+        <bpmn:incoming>edge_Event_Jplwm3-Activity_cTGEvh</bpmn:incoming>
+        <bpmn:outgoing>edge_Activity_cTGEvh-Event_OwhbjF</bpmn:outgoing>
+      </bpmn:task>
+      <bpmn:endEvent id="Event_OwhbjF" name="DummyEndV2">
+        <bpmn:incoming>edge_Activity_cTGEvh-Event_OwhbjF</bpmn:incoming>
+      </bpmn:endEvent>
+      <bpmn:sequenceFlow id="edge_Event_Jplwm3-Activity_cTGEvh" sourceRef="Event_Jplwm3" targetRef="Activity_cTGEvh" />
+      <bpmn:sequenceFlow id="edge_Activity_cTGEvh-Event_OwhbjF" sourceRef="Activity_cTGEvh" targetRef="Event_OwhbjF" />
+    </bpmn:subProcess>
+    <bpmn:endEvent id="Event_ZYYbqd" name="EndV2 VersionString">
+      <bpmn:incoming>edge_Activity_okhSKb-Event_ZYYbqd</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:endEvent id="Event_sSEE4Y" name="EndV1 VersionString">
+      <bpmn:incoming>edge_Activity_DEfbJq-Event_sSEE4Y</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:endEvent id="Event_hwQSNt" name="EndUnknownError VersionString">
+      <bpmn:incoming>edge_Gateway_XEI5hz-Event_hwQSNt</bpmn:incoming>
+      <bpmn:errorEventDefinition />
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="edge_Gateway_XEI5hz-Activity_DEfbJq" name="branch-v1" sourceRef="Gateway_XEI5hz" targetRef="Activity_DEfbJq">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=vars.vL2i7i5eG.Equals("v1")</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="edge_Gateway_XEI5hz-Activity_okhSKb" name="branch-v2" sourceRef="Gateway_XEI5hz" targetRef="Activity_okhSKb">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=vars.vL2i7i5eG.Equals("v2")</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="edge_Activity_okhSKb-Event_ZYYbqd" sourceRef="Activity_okhSKb" targetRef="Event_ZYYbqd" />
+    <bpmn:sequenceFlow id="edge_Activity_DEfbJq-Event_sSEE4Y" sourceRef="Activity_DEfbJq" targetRef="Event_sSEE4Y" />
+    <bpmn:sequenceFlow id="edge_Gateway_XEI5hz-Event_hwQSNt" name="branch-unknownVersion" sourceRef="Gateway_XEI5hz" targetRef="Event_hwQSNt" />
+    <bpmn:association id="edge_Event_start-Text_xTGtS4" sourceRef="Event_start" targetRef="Text_xTGtS4" />
+    <bpmn:sequenceFlow id="edge_Event_start-Gateway_XEI5hzCTTg8q" sourceRef="Event_start" targetRef="Gateway_XEI5hz" />
+    <bpmn:textAnnotation id="Text_xTGtS4">
+      <bpmn:text>default value for input argument Version honored
+- not by a Test run in Modeler
+- but when executed e.g. in Orchestrator</bpmn:text>
+    </bpmn:textAnnotation>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
+      <bpmndi:BPMNShape id="S_Event_start" bpmnElement="Event_start">
+        <dc:Bounds x="131" y="200" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="131" y="241" width="36" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Gateway_XEI5hz" bpmnElement="Gateway_XEI5hz">
+        <dc:Bounds x="425" y="194" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="425" y="249" width="50" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Activity_DEfbJq" bpmnElement="Activity_DEfbJq" isExpanded="false">
+        <dc:Bounds x="634.1315927887488" y="178.24214171674478" width="100" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="634.1315927887488" y="263.24214171674475" width="100" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Activity_okhSKb" bpmnElement="Activity_okhSKb" isExpanded="false">
+        <dc:Bounds x="634.1315927887488" y="278.24214171674475" width="100" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="634.1315927887488" y="363.24214171674475" width="100" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Event_ZYYbqd" bpmnElement="Event_ZYYbqd">
+        <dc:Bounds x="784.1315927887488" y="300.24214171674475" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="784.1315927887488" y="341.24214171674475" width="36" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Event_sSEE4Y" bpmnElement="Event_sSEE4Y">
+        <dc:Bounds x="784.1315927887488" y="200.24214171674478" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="784.1315927887488" y="241.24214171674478" width="36" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Event_hwQSNt" bpmnElement="Event_hwQSNt">
+        <dc:Bounds x="784.1315927887488" y="401" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="784.1315927887488" y="442" width="36" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Text_xTGtS4" bpmnElement="Text_xTGtS4">
+        <dc:Bounds x="99.26210099323725" y="104.38834831011161" width="341" height="53" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="99.26210099323725" y="162.3883483101116" width="341" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Gateway_XEI5hz-Activity_DEfbJq" bpmnElement="edge_Gateway_XEI5hz-Activity_DEfbJq">
+        <di:waypoint x="475" y="219" />
+        <di:waypoint x="634" y="218" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Gateway_XEI5hz-Activity_okhSKb" bpmnElement="edge_Gateway_XEI5hz-Activity_okhSKb">
+        <di:waypoint x="475" y="219" />
+        <di:waypoint x="500" y="219" />
+        <di:waypoint x="500" y="319" />
+        <di:waypoint x="634" y="318" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Activity_okhSKb-Event_ZYYbqd" bpmnElement="edge_Activity_okhSKb-Event_ZYYbqd">
+        <di:waypoint x="734" y="318" />
+        <di:waypoint x="784" y="318" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Activity_DEfbJq-Event_sSEE4Y" bpmnElement="edge_Activity_DEfbJq-Event_sSEE4Y">
+        <di:waypoint x="734" y="218" />
+        <di:waypoint x="784" y="218" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Gateway_XEI5hz-Event_hwQSNt" bpmnElement="edge_Gateway_XEI5hz-Event_hwQSNt">
+        <di:waypoint x="450" y="244" />
+        <di:waypoint x="450" y="419" />
+        <di:waypoint x="784" y="419" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Event_start-Text_xTGtS4" bpmnElement="edge_Event_start-Text_xTGtS4">
+        <di:waypoint x="167" y="205" />
+        <di:waypoint x="233" y="157" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Event_start-Gateway_XEI5hzCTTg8q" bpmnElement="edge_Event_start-Gateway_XEI5hzCTTg8q">
+        <di:waypoint x="167" y="218" />
+        <di:waypoint x="296" y="218" />
+        <di:waypoint x="296" y="219" />
+        <di:waypoint x="425" y="219" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+  <bpmndi:BPMNDiagram id="Activity_DEfbJq_Diagram">
+    <bpmndi:BPMNPlane id="Activity_DEfbJq_Plane" bpmnElement="Activity_DEfbJq">
+      <bpmndi:BPMNShape id="S_Event_50Hr7G" bpmnElement="Event_50Hr7G">
+        <dc:Bounds x="260" y="200" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="260" y="241" width="36" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Activity_nqcGUh" bpmnElement="Activity_nqcGUh">
+        <dc:Bounds x="346" y="178" width="100" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="346" y="263" width="100" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Event_mtGAUe" bpmnElement="Event_mtGAUe">
+        <dc:Bounds x="496" y="200" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="496" y="241" width="36" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Event_50Hr7G-Activity_nqcGUh" bpmnElement="edge_Event_50Hr7G-Activity_nqcGUh">
+        <di:waypoint x="296" y="218" />
+        <di:waypoint x="346" y="218" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Activity_nqcGUh-Event_mtGAUe" bpmnElement="edge_Activity_nqcGUh-Event_mtGAUe">
+        <di:waypoint x="446" y="218" />
+        <di:waypoint x="496" y="218" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+  <bpmndi:BPMNDiagram id="Activity_okhSKb_Diagram">
+    <bpmndi:BPMNPlane id="Activity_okhSKb_Plane" bpmnElement="Activity_okhSKb">
+      <bpmndi:BPMNShape id="S_Event_Jplwm3" bpmnElement="Event_Jplwm3">
+        <dc:Bounds x="260" y="200" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="260" y="241" width="36" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Activity_cTGEvh" bpmnElement="Activity_cTGEvh">
+        <dc:Bounds x="346" y="178" width="100" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="346" y="263" width="100" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Event_OwhbjF" bpmnElement="Event_OwhbjF">
+        <dc:Bounds x="496" y="200" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="496" y="241" width="36" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Event_Jplwm3-Activity_cTGEvh" bpmnElement="edge_Event_Jplwm3-Activity_cTGEvh">
+        <di:waypoint x="296" y="218" />
+        <di:waypoint x="346" y="218" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Activity_cTGEvh-Event_OwhbjF" bpmnElement="edge_Activity_cTGEvh-Event_OwhbjF">
+        <di:waypoint x="446" y="218" />
+        <di:waypoint x="496" y="218" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

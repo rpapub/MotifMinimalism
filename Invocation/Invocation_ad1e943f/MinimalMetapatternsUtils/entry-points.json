@@ -1,0 +1,69 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "$id": "entry-points.json",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "f1991a14-3bb1-4c18-9cd5-f7c87ca2a888",
+      "type": "Process",
+      "input": {
+        "type": "object",
+        "properties": {
+          "Request": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/jToken"
+            },
+            "$defs": {
+              "jToken": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/jToken"
+                }
+              }
+            }
+          },
+          "BehaviorVariant": {
+            "type": "string"
+          }
+        },
+        "required": [],
+        "$defs": {
+          "jToken": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/jToken"
+            }
+          }
+        }
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "Response": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/jToken"
+            },
+            "$defs": {
+              "jToken": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/jToken"
+                }
+              }
+            }
+          }
+        },
+        "$defs": {
+          "jToken": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/jToken"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

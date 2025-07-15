@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:uipath="http://uipath.org/schema/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="sample-diagram" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL" exporter="UiPath Studio Web (https://uipath.com)" exporterVersion="b1501e12">
+  <bpmn:process id="Process_1" name="InitializationWithRequestJObjectArgument" isExecutable="false">
+    <bpmn:extensionElements>
+      <uipath:variables version="v1">
+        <uipath:input id="vUGEe3yYX" name="Request" type="jsonSchema" elementId="Event_start" default="{&#34;version&#34;:&#34;v1&#34;,&#34;payload&#34;:{}}"><![CDATA[{"type":"object","$schema":"http://json-schema.org/draft-07/schema#","properties":{"version":{"type":"string"},"correlationId":{"type":"string"},"requestId":{"type":"string"},"timestamp":{"type":"string"},"logContext":{"type":"object"},"payload":{"type":"object"}}}]]></uipath:input>
+        <uipath:inputOutput id="vr4Lj9DZy" name="Request" type="jsonSchema" elementId="Event_start"><![CDATA[{"type":"object","$schema":"http://json-schema.org/draft-07/schema#","properties":{"version":{"type":"string"},"correlationId":{"type":"string"},"requestId":{"type":"string"},"timestamp":{"type":"string"},"logContext":{"type":"object"},"payload":{"type":"object"}}}]]></uipath:inputOutput>
+        <uipath:inputOutput id="vc5ZyRlfG" name="Error" type="any" elementId="Activity_954DDV" />
+        <uipath:inputOutput id="vU6UKjcPW" name="Response" type="array" elementId="Activity_954DDV" />
+      </uipath:variables>
+      <uipath:bindings version="v1">
+        <uipath:binding id="br3gZAo9c" name="folderPath" type="string" default="Solution Folder" resource="process" resourceKey="Solution Folder.Logger" propertyAttribute="folderPath" />
+        <uipath:binding id="bWaPeEuaX" name="name" type="string" default="Logger" resource="process" resourceKey="Solution Folder.Logger" propertyAttribute="name" />
+        <uipath:binding id="bRr5puQ7P" name="folderPath" type="string" default="Solution Folder" resource="process" resourceKey="Solution Folder.MinimalMetapatternsUtils" propertyAttribute="folderPath" />
+        <uipath:binding id="bqVPo8w0f" name="name" type="string" default="MinimalMetapatternsUtils" resource="process" resourceKey="Solution Folder.MinimalMetapatternsUtils" propertyAttribute="name" />
+      </uipath:bindings>
+    </bpmn:extensionElements>
+    <bpmn:startEvent id="Event_start" name="Start event RequestJObject">
+      <bpmn:extensionElements>
+        <uipath:entryPointId value="5254f5cb-de07-4ce5-ae0a-dffffd7ab14a" />
+        <uipath:mapping version="v1">
+          <uipath:type value="BPMN.Variables" version="v1" />
+          <uipath:output name="Request" type="json" source="=vars.vUGEe3yYX" var="vr4Lj9DZy" />
+        </uipath:mapping>
+      </bpmn:extensionElements>
+      <bpmn:outgoing>edge_Event_start-Activity_954DDVMUVZuV</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:exclusiveGateway id="Gateway_ni15ov" name="VersionGateway" default="edge_Gateway_ni15ov-Activity_WVAF7T">
+      <bpmn:incoming>edge_Activity_954DDV-Gateway_ni15ovhweYtA</bpmn:incoming>
+      <bpmn:outgoing>edge_Gateway_ni15ov-Activity_SQ4wnJ</bpmn:outgoing>
+      <bpmn:outgoing>edge_Gateway_ni15ov-Activity_WVAF7T</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:subProcess id="Activity_SQ4wnJ" name="v1">
+      <bpmn:incoming>edge_Gateway_ni15ov-Activity_SQ4wnJ</bpmn:incoming>
+      <bpmn:outgoing>edge_Activity_SQ4wnJ-Event_BIiFHd</bpmn:outgoing>
+      <bpmn:startEvent id="Event_mCVMyd" name="DummyStartV1">
+        <bpmn:extensionElements>
+          <uipath:entryPointId value="b96b5c85-534c-453a-b2ac-8d6901824ca8" />
+        </bpmn:extensionElements>
+        <bpmn:outgoing>edge_Event_mCVMyd-Activity_fK9CeQ</bpmn:outgoing>
+      </bpmn:startEvent>
+      <bpmn:task id="Activity_fK9CeQ" name="DummyTaskV1">
+        <bpmn:incoming>edge_Event_mCVMyd-Activity_fK9CeQ</bpmn:incoming>
+        <bpmn:outgoing>edge_Activity_fK9CeQ-Event_xuG4xz</bpmn:outgoing>
+      </bpmn:task>
+      <bpmn:endEvent id="Event_xuG4xz" name="DummyEndV1">
+        <bpmn:incoming>edge_Activity_fK9CeQ-Event_xuG4xz</bpmn:incoming>
+      </bpmn:endEvent>
+      <bpmn:sequenceFlow id="edge_Event_mCVMyd-Activity_fK9CeQ" sourceRef="Event_mCVMyd" targetRef="Activity_fK9CeQ" />
+      <bpmn:sequenceFlow id="edge_Activity_fK9CeQ-Event_xuG4xz" sourceRef="Activity_fK9CeQ" targetRef="Event_xuG4xz" />
+    </bpmn:subProcess>
+    <bpmn:subProcess id="Activity_WVAF7T" name="not yet implemented">
+      <bpmn:incoming>edge_Gateway_ni15ov-Activity_WVAF7T</bpmn:incoming>
+      <bpmn:outgoing>edge_Activity_WVAF7T-Event_qlcJ38</bpmn:outgoing>
+      <bpmn:startEvent id="Event_KwbqPi" name="DummyStartNotYetImplemented">
+        <bpmn:extensionElements>
+          <uipath:entryPointId value="dd695dfd-02ff-4406-b4ef-19059970628f" />
+        </bpmn:extensionElements>
+        <bpmn:outgoing>edge_Event_KwbqPi-Activity_HQgnin</bpmn:outgoing>
+      </bpmn:startEvent>
+      <bpmn:task id="Activity_HQgnin" name="DummyTaskNotYetImplemented">
+        <bpmn:incoming>edge_Event_KwbqPi-Activity_HQgnin</bpmn:incoming>
+        <bpmn:outgoing>edge_Activity_HQgnin-Event_Fld6Ot</bpmn:outgoing>
+      </bpmn:task>
+      <bpmn:endEvent id="Event_Fld6Ot" name="DummyEndNotYetImplemented">
+        <bpmn:incoming>edge_Activity_HQgnin-Event_Fld6Ot</bpmn:incoming>
+      </bpmn:endEvent>
+      <bpmn:sequenceFlow id="edge_Event_KwbqPi-Activity_HQgnin" sourceRef="Event_KwbqPi" targetRef="Activity_HQgnin" />
+      <bpmn:sequenceFlow id="edge_Activity_HQgnin-Event_Fld6Ot" sourceRef="Activity_HQgnin" targetRef="Event_Fld6Ot" />
+    </bpmn:subProcess>
+    <bpmn:endEvent id="Event_qlcJ38" name="EndUnknownError RequestJObject">
+      <bpmn:incoming>edge_Activity_WVAF7T-Event_qlcJ38</bpmn:incoming>
+      <bpmn:errorEventDefinition />
+    </bpmn:endEvent>
+    <bpmn:endEvent id="Event_BIiFHd" name="EndV1 RequestJObject">
+      <bpmn:incoming>edge_Activity_SQ4wnJ-Event_BIiFHd</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:serviceTask id="Activity_954DDV" name="MinimalMetapatternsUtils">
+      <bpmn:extensionElements>
+        <uipath:activity version="v1">
+          <uipath:type value="Orchestrator.StartJob" version="v2" />
+          <uipath:context>
+            <uipath:input name="name" type="string" value="=bindings.bqVPo8w0f" />
+            <uipath:input name="folderPath" type="string" value="=bindings.bRr5puQ7P" />
+            <uipath:input name="_label" type="string" value="MinimalMetapatternsUtils" />
+          </uipath:context>
+          <uipath:input name="JobArguments" type="json" target="bodyField"><![CDATA[{"Request":"=vars.vr4Lj9DZy","BehaviorVariant":null}]]></uipath:input>
+          <uipath:output name="Error" type="any" source="=Error" var="vc5ZyRlfG" />
+          <uipath:output name="Response" type="array" source="=Response" var="vU6UKjcPW" />
+        </uipath:activity>
+      </bpmn:extensionElements>
+      <bpmn:incoming>edge_Event_start-Activity_954DDVMUVZuV</bpmn:incoming>
+      <bpmn:outgoing>edge_Activity_954DDV-Gateway_ni15ovhweYtA</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="edge_Gateway_ni15ov-Activity_SQ4wnJ" name="branch-v1" sourceRef="Gateway_ni15ov" targetRef="Activity_SQ4wnJ">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=vars.vr4Lj9DZy.version.Equals("v1")</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="edge_Gateway_ni15ov-Activity_WVAF7T" name="branch-unknownVersion" sourceRef="Gateway_ni15ov" targetRef="Activity_WVAF7T" />
+    <bpmn:sequenceFlow id="edge_Activity_WVAF7T-Event_qlcJ38" sourceRef="Activity_WVAF7T" targetRef="Event_qlcJ38" />
+    <bpmn:sequenceFlow id="edge_Activity_SQ4wnJ-Event_BIiFHd" sourceRef="Activity_SQ4wnJ" targetRef="Event_BIiFHd" />
+    <bpmn:sequenceFlow id="edge_Event_start-Activity_954DDVMUVZuV" sourceRef="Event_start" targetRef="Activity_954DDV" />
+    <bpmn:sequenceFlow id="edge_Activity_954DDV-Gateway_ni15ovhweYtA" sourceRef="Activity_954DDV" targetRef="Gateway_ni15ov" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
+      <bpmndi:BPMNShape id="S_Event_start" bpmnElement="Event_start">
+        <dc:Bounds x="119" y="200" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="119" y="241" width="36" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Gateway_ni15ov" bpmnElement="Gateway_ni15ov">
+        <dc:Bounds x="382" y="193" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="382" y="248" width="50" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Activity_SQ4wnJ" bpmnElement="Activity_SQ4wnJ" isExpanded="false">
+        <dc:Bounds x="623" y="178" width="100" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="623" y="263" width="100" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Activity_WVAF7T" bpmnElement="Activity_WVAF7T" isExpanded="false">
+        <dc:Bounds x="623" y="278" width="100" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="623" y="363" width="100" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Event_qlcJ38" bpmnElement="Event_qlcJ38">
+        <dc:Bounds x="773" y="300" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="773" y="341" width="36" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Event_BIiFHd" bpmnElement="Event_BIiFHd">
+        <dc:Bounds x="773" y="200" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="773" y="241" width="36" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Activity_954DDV" bpmnElement="Activity_954DDV">
+        <dc:Bounds x="214.19998168945312" y="178" width="100" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="214.19998168945312" y="263" width="100" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Gateway_ni15ov-Activity_SQ4wnJ" bpmnElement="edge_Gateway_ni15ov-Activity_SQ4wnJ">
+        <di:waypoint x="432" y="218" />
+        <di:waypoint x="623" y="218" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Gateway_ni15ov-Activity_WVAF7T" bpmnElement="edge_Gateway_ni15ov-Activity_WVAF7T">
+        <di:waypoint x="432" y="218" />
+        <di:waypoint x="528" y="218" />
+        <di:waypoint x="528" y="318" />
+        <di:waypoint x="623" y="318" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Activity_WVAF7T-Event_qlcJ38" bpmnElement="edge_Activity_WVAF7T-Event_qlcJ38">
+        <di:waypoint x="723" y="318" />
+        <di:waypoint x="773" y="318" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Activity_SQ4wnJ-Event_BIiFHd" bpmnElement="edge_Activity_SQ4wnJ-Event_BIiFHd">
+        <di:waypoint x="723" y="218" />
+        <di:waypoint x="773" y="218" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Event_start-Activity_954DDVMUVZuV" bpmnElement="edge_Event_start-Activity_954DDVMUVZuV">
+        <di:waypoint x="155" y="218" />
+        <di:waypoint x="214.19998168945312" y="218" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Activity_954DDV-Gateway_ni15ovhweYtA" bpmnElement="edge_Activity_954DDV-Gateway_ni15ovhweYtA">
+        <di:waypoint x="314.1999816894531" y="218" />
+        <di:waypoint x="382" y="218" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+  <bpmndi:BPMNDiagram id="Activity_SQ4wnJ_Diagram">
+    <bpmndi:BPMNPlane id="Activity_SQ4wnJ_Plane" bpmnElement="Activity_SQ4wnJ">
+      <bpmndi:BPMNShape id="S_Event_mCVMyd" bpmnElement="Event_mCVMyd">
+        <dc:Bounds x="260" y="200" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="260" y="241" width="36" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Activity_fK9CeQ" bpmnElement="Activity_fK9CeQ">
+        <dc:Bounds x="346" y="178" width="100" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="346" y="263" width="100" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Event_xuG4xz" bpmnElement="Event_xuG4xz">
+        <dc:Bounds x="496" y="200" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="496" y="241" width="36" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Event_mCVMyd-Activity_fK9CeQ" bpmnElement="edge_Event_mCVMyd-Activity_fK9CeQ">
+        <di:waypoint x="296" y="218" />
+        <di:waypoint x="346" y="218" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Activity_fK9CeQ-Event_xuG4xz" bpmnElement="edge_Activity_fK9CeQ-Event_xuG4xz">
+        <di:waypoint x="446" y="218" />
+        <di:waypoint x="496" y="218" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+  <bpmndi:BPMNDiagram id="Activity_WVAF7T_Diagram">
+    <bpmndi:BPMNPlane id="Activity_WVAF7T_Plane" bpmnElement="Activity_WVAF7T">
+      <bpmndi:BPMNShape id="S_Event_KwbqPi" bpmnElement="Event_KwbqPi">
+        <dc:Bounds x="260" y="200" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="260" y="241" width="36" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Activity_HQgnin" bpmnElement="Activity_HQgnin">
+        <dc:Bounds x="346" y="178" width="100" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="346" y="263" width="100" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Event_Fld6Ot" bpmnElement="Event_Fld6Ot">
+        <dc:Bounds x="496" y="200" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="496" y="241" width="36" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Event_KwbqPi-Activity_HQgnin" bpmnElement="edge_Event_KwbqPi-Activity_HQgnin">
+        <di:waypoint x="296" y="218" />
+        <di:waypoint x="346" y="218" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Activity_HQgnin-Event_Fld6Ot" bpmnElement="edge_Activity_HQgnin-Event_Fld6Ot">
+        <di:waypoint x="446" y="218" />
+        <di:waypoint x="496" y="218" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
