@@ -18,13 +18,13 @@ def main(zip_path_str):
         print(f"File not found: {zip_path}")
         sys.exit(1)
 
-    static_target = Path.cwd() / "static" / "Invocation"
-    static_target.mkdir(parents=True, exist_ok=True)
-    shutil.copy2(zip_path, static_target / zip_path.name)
-
     base_name = zip_path.stem
     stripped = sanitize_filename(base_name)
     prefix = stripped.split('_')[0]
+
+    static_target = Path.cwd() / "webpage" / prefix
+    static_target.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(zip_path, static_target / zip_path.name)
 
     target_folder = Path.cwd() / prefix / stripped
     print(f"Target folder: {target_folder}")
