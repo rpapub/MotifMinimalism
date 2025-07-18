@@ -1,7 +1,14 @@
+title: MotifMinimalism
+description: Minimal, code-first UiPath Maestro explorations of core runtime constructs, capturing the essence of execution semantics in standalone solutions.
 include: ['_pages']
 markdown: kramdown
-layouts_dir: ./static/_layouts
+github_url: https://github.com/rpapub/MotifMinimalism
+brand_icon_fontawesome_pro: folder-music
+source: .
+layouts_dir: ./_pages/_layouts
+includes_dir: ./_pages/_includes
 theme: null
+baseurl: /MotifMinimalism
 
 collections:
   pages:

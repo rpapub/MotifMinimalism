@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% if title %}{{ title | escape }} - {{ site.title }}{% elsif page.title %}{{ page.title | escape }} - {{ site.title }}{% else %}{{ site.title | escape }}{% endif %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="{% if title %}{{ site.title }} - {{ title | escape }}{% elsif page.title %}{{ site.title }} - {{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
+  <meta property="og:description" content="{{ site.description}}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://github.com/rpapub/MotifMinimalism">
+  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/social-image.png">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if title %}{{ site.title }} - {{ title | escape }}{% elsif page.title %}{{ site.title }} - {{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
+  <meta name="twitter:description" content="{{ page.description | default: site.description }}">
+  <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/assets/social-image.png">
+
+<link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-beta.2/dist/styles/webawesome.css" />
+<script type="module" src="https://early.webawesome.com/webawesome@3.0.0-beta.2/dist/webawesome.loader.js"></script>
+<script type="module">
+  import { setKitCode } from 'https://early.webawesome.com/webawesome@3.0.0-beta.2/dist/webawesome.loader.js';
+  setKitCode('d118964fc9');
+</script>
+</head>
+
+  <body>
+    <wa-page mobile-breakpoint="920">
+      <div slot="banner" class="wa-body-s">
+{% include webawesome/banner.html %}
+      </div>
+      <header slot="header" class="wa-split">
+{% include webawesome/header.html %}
+      </header>
+      <nav slot="subheader">
+{% include webawesome/nav_subheader.html %}
+      </nav>
+      <nav slot="navigation-header">
+{% include webawesome/nav_navigation-header.html %}
+      </nav>
+      <nav slot="navigation">
+{% include webawesome/nav_navigation.html %}
+      </nav>
+      <nav slot="navigation-footer">
+{% include webawesome/nav_navigation-footer.html %}
+      </nav>
+      <header slot="main-header">
+{% include webawesome/main-header.html %}
+      </header>
+      <main class="wa-body-l">
+{{ content }}
+      </main>
+      <footer slot="main-footer">
+{% include webawesome/main-footer.html %}
+      </footer>
+      <aside slot="aside" class="wa-desktop-only">
+{% include webawesome/aside.html %}
+      </aside>
+      <footer slot="footer" class="wa-grid wa-gap-xl">
+{% include webawesome/footer.html %}
+      </footer>
+    </wa-page>
+
+    <style>
+      wa-page {
+        --menu-width: 15rem;
+        --aside-width: 15rem;
+      }
+      wa-page[view='desktop'] {
+        [slot*='navigation'] {
+          border-inline-end: var(--wa-border-width-s) var(--wa-border-style) var(--wa-color-surface-border);
+        }
+      }
+      wa-page[view='mobile'] {
+        --menu-width: auto;
+        --aside-width: auto;
+      }
+
+      [slot='banner'] {
+        --wa-color-text-link: var(--wa-color-neutral-on-loud);
+        background-color: var(--wa-color-neutral-fill-loud);
+      }
+      [slot='header'] {
+        --wa-link-decoration-default: none;
+        border-block-end: var(--wa-border-width-s) var(--wa-border-style) var(--wa-color-surface-border);
+      }
+      [slot*='header'] a {
+        font-weight: var(--wa-font-weight-action);
+      }
+      [slot='subheader'] {
+        background-color: var(--wa-color-surface-lowered);
+        border-block-end: var(--wa-border-width-s) var(--wa-border-style) var(--wa-color-surface-border);
+      }
+      [slot='navigation-header'] {
+        border-block-end: var(--wa-border-width-s) var(--wa-border-style) var(--wa-color-surface-border);
+      }
+
+      [slot*='navigation'] a {
+        --wa-color-text-link: var(--wa-color-text-normal);
+      }
+      [slot='navigation-footer'] {
+        border-block-start: var(--wa-border-width-s) var(--wa-border-style) var(--wa-color-surface-border);
+
+        .wa-flank {
+          --flank-size: 1.25em;
+        }
+      }
+      [slot='main-header'],
+      main,
+      [slot='main-footer'] {
+        max-inline-size: 60rem;
+        margin-inline: auto;
+      }
+      [slot='main-footer'] {
+        border-block-start: var(--wa-border-width-s) var(--wa-border-style) var(--wa-color-surface-border);
+      }
+      [slot='footer'] {
+        --wa-color-text-link: var(--wa-color-text-quiet);
+        background-color: var(--wa-color-surface-lowered);
+        font-size: var(--wa-font-size-s);
+      }
+    </style>
+
+    <script>
+      const sectionAnchors = document.querySelectorAll("[slot*='navigation'] a[href*='#']");
+      sectionAnchors.forEach(sectionAnchor => sectionAnchor.setAttribute('data-drawer', 'close'));
+    </script>
+  </body>
