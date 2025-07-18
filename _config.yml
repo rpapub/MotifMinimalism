@@ -5,8 +5,10 @@ markdown: kramdown
 github_url: https://github.com/rpapub/MotifMinimalism
 brand_icon_fontawesome_pro: folder-music
 source: .
-layouts_dir: ./_pages/_layouts
-includes_dir: ./_pages/_includes
+layouts_dir: ./webpage/_layouts
+includes_dir: ./webpage/_includes
+collections_dir: ./webpage/collections
+data_dir: ./webpage/_data
 theme: null
 baseurl: /MotifMinimalism
 
@@ -14,3 +16,12 @@ collections:
   pages:
     output: true
     permalink: /:path
+  dummy:
+    output: true
+    permalink: /:collection/:name
+
+defaults:
+  - scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: webawesome

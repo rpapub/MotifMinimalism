@@ -1,3 +1,6 @@
 .jekyll-cache
 Gemfile.lock
 _site
+
+webpage/collections/_dummy
+webpage/_data/dummy
