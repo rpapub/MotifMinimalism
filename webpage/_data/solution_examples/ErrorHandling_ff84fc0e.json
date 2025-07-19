@@ -1,0 +1,125 @@
+{
+  "schema_version": "",
+  "solution_examples": {
+    "ff84fc0e-5819-448a-ea77-08ddc3d563ae": {
+      "CreatedAt": "",
+      "Name": "",
+      "educational": {
+        "estimated_time_minutes": 0,
+        "goals": [],
+        "level": "",
+        "prerequisites": []
+      },
+      "publishing": {
+        "audience": [],
+        "authors": [
+          "Christian Prior-Mamulyan"
+        ],
+        "created": "",
+        "last_updated": "",
+        "render": {
+          "layout": "",
+          "permalink": ""
+        },
+        "slug": "",
+        "status": "",
+        "summary": "",
+        "tags": [],
+        "title": "",
+        "visibility": ""
+      },
+      "runtime_construct": {
+        "artifact_version": "",
+        "category": "",
+        "compatibility": "",
+        "design_tool_versions": [],
+        "edge_cases": [],
+        "execution_phase": "",
+        "inputs": "",
+        "observability": "",
+        "outputs": "",
+        "platform_constraints": "",
+        "runtime_versions": [],
+        "source_commit": "",
+        "tags": [],
+        "tech_stack": []
+      },
+      "solution": {
+        "Authors": [
+          "Christian Prior-Mamulyan"
+        ],
+        "Description": "",
+        "DocVersion": "",
+        "DownloadUrls": [
+          "/webpage/download/ErrorHandling_ff84fc0e.uis"
+        ],
+        "Name": "ErrorHandling_ff84fc0e",
+        "Projects": [
+          {
+            "Type": "Process",
+            "ProjectRelativePath": "MinimalMetapatternsUtils/project.uiproj",
+            "Id": "652918b2-a4c0-442a-87b2-f4e0d9b26a1f",
+            "Name": "MinimalMetapatternsUtils",
+            "Description": "This RPA project acts as a diagnostic utility to interact with and inspect JSON payloads exchanged with the Maestro BPMN engine. It helps trace, validate, and log process data (e.g., \"ping/pong\" objects) by exposing internal structure via recursive logging and safe fallback handling, enabling faster debugging and schema exploration.",
+            "images": []
+          },
+          {
+            "Type": "ProcessOrchestration",
+            "ProjectRelativePath": "HandleReturnedStatus/project.uiproj",
+            "Id": "f235257f-fa06-45f6-9be1-c38fbb6cdbe9",
+            "Name": "HandleReturnedStatus",
+            "Description": "log out a fingerprint of tatus for inspection",
+            "images": [],
+            "inputs": {
+              "type": "object",
+              "properties": {
+                "Request": {
+                  "type": "object",
+                  "properties": {
+                    "version": {
+                      "type": "string"
+                    },
+                    "correlationId": {
+                      "type": "string"
+                    },
+                    "requestId": {
+                      "type": "string"
+                    },
+                    "timestamp": {
+                      "type": "string"
+                    },
+                    "logContext": {
+                      "type": "object"
+                    },
+                    "payload": {
+                      "type": "object"
+                    }
+                  }
+                }
+              },
+              "required": []
+            },
+            "outputs": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        ],
+        "SolutionId": "",
+        "StudioMinVersion": "",
+        "created_at": "",
+        "images1": [],
+        "tech_stack": {
+          "account_type": "COMMUNITY",
+          "design_tool_versions": [
+            "UiPath Studio Web 9e669382d",
+            "https://uipath-apps-prdcom.azureedge.net/assetsdesignermfe/2025.7.14-11.8.26-s171.5d2e8d21b/v18/designerRemoteEntry.js?hash=2025.7.14-11.8.26-s171.5d2e8d21b"
+          ],
+          "name": "UiPath Automation Cloud",
+          "orchestrator_version": "2024.10.0-s171",
+          "studio_version": "9e669382d"
+        }
+      }
+    }
+  }
+}

@@ -58,44 +58,55 @@
                 ],
                 "DocVersion": "1.0.0",
                 "StudioMinVersion": "2025.04.0",
-                "Author": "Christian Prior-Mamulyan",
+                "Authors": [
+                    "Christian Prior-Mamulyan"
+                ],
                 "created_at": "2025-07-18T23:24:09Z",
-                "tested_with": {
-                    "cloud.uipath.com_studio_version": "9e669382d",
-                    "accountType": "COMMUNITY",
-                    "microfrontend-url": "https://uipath-apps-prdcom.azureedge.net/assetsdesignermfe/2025.7.14-11.8.26-s171.5d2e8d21b/v18/designerRemoteEntry.js?hash=2025.7.14-11.8.26-s171.5d2e8d21b",
-                    "frontendurlhash": "2025.7.14-11.8.26-s171.5d2e8d21b",
-                    "Orchestrator": "2024.10.0-s171.9492"
+                "tech_stack": {
+                    "name": "UiPath Automation Cloud",
+                    "account_type": "COMMUNITY",
+                    "studio_version": "9e669382d",
+                    "orchestrator_version": "2024.10.0-s171",
+                    "design_tool_versions": [
+                        "UiPath Studio Web 9e669382d",
+                        "frontendurlhash 2025.7.14-11.8.26-s171.5d2e8d21b",
+                        "microfrontend-url: https://uipath-apps-prdcom.azureedge.net/assetsdesignermfe/2025.7.14-11.8.26-s171.5d2e8d21b/v18/designerRemoteEntry.js?hash=2025.7.14-11.8.26-s171.5d2e8d21b"
+                    ]
                 },
-                "tech_stack": [
-                    "UiPath Automation Cloud"
-                ],
-                "design_tool_versions": [
-                    "UiPath Studio Web 9e669382d",
-                    "frontendurlhash 2025.7.14-11.8.26-s171.5d2e8d21b"
-                ],
-                "runtime_versions": [
-                    "Orchestrator 2024.10.0-s171"
-                ],
                 "Projects": [
                     {
                         "Type": "ProcessOrchestration",
                         "ProjectRelativePath": "VersionString/project.uiproj",
                         "Id": "e7b5240f-c1db-4e45-ad39-3f31ed4efaec",
                         "Name": "VersionString",
-                        "Description": "Demonstrates how to pass a simple string into a trigger.",
+                        "Description": "This example demonstrates how to pass inputs into the trigger. It covers three entrypoints: passing a simple string, passing a complex JSON object, and passing both together. The goal is to test whether such a code structure executes correctly throughout the platform.",
                         "images": [
                             "capture_001_18072025_232409.png",
                             "capture_003_18072025_232452.png",
                             "capture_004_18072025_232456.png"
-                        ]
+                        ],
+                        "inputs": {
+                            "type": "object",
+                            "properties": {
+                                "Version": {
+                                    "type": "string",
+                                    "title": "Version",
+                                    "default": "v1"
+                                }
+                            },
+                            "required": []
+                        },
+                        "outputs": {
+                            "type": "object",
+                            "properties": {}
+                        }
                     },
                     {
                         "Type": "ProcessOrchestration",
                         "ProjectRelativePath": "RequestJObject/project.uiproj",
                         "Id": "635b364c-eb84-48e4-a065-519243f050bc",
                         "Name": "RequestJObject",
-                        "Description": "Demonstrates how to pass a complex JSON object.",
+                        "Description": "This example demonstrates how to pass a complex JSON object into the trigger. It illustrates how structured input is received and processed during runtime.",
                         "images": [
                             "capture_005_18072025_232522.png"
                         ]
@@ -105,10 +116,40 @@
                         "ProjectRelativePath": "VersionAndRequestJObject/project.uiproj",
                         "Id": "07685722-bcba-4e9b-a91e-97809659ba84",
                         "Name": "VersionAndRequestJObject",
-                        "Description": "Passes both a simple string and complex JSON object.",
+                        "Description": "This example demonstrates how to pass both a simple string and a complex JSON object into the trigger. It highlights how multiple input types with differing complexity are handled in a single invocation.",
                         "images": [
                             "capture_006_18072025_232531.png"
                         ]
+                    },
+                    {
+                        "Type": "ProcessOrchestration",
+                        "ProjectRelativePath": "MultipleEntrypoints/project.uiproj",
+                        "Id": "01147932-e6f2-4582-ad41-dba06920c327",
+                        "Name": "MultipleEntrypoints",
+                        "Description": "This example demonstrates how to pass inputs into the trigger. It covers three entrypoints: passing a simple string, passing a complex JSON object, and passing both together. The goal is to test whether such a code structure executes correctly throughout the platform.",
+                        "images": [
+                            "capture_001_18072025_232409.png",
+                            "capture_003_18072025_232452.png",
+                            "capture_004_18072025_232456.png",
+                            "capture_005_18072025_232522.png",
+                            "capture_006_18072025_232531.png"
+                        ]
+                    },
+                    {
+                        "Type": "Process",
+                        "ProjectRelativePath": "MotifMinimalism/project.uiproj",
+                        "Id": "02a08226-6c4b-461e-980b-cdb86636490d",
+                        "Name": "MotifMinimalism",
+                        "Description": "This RPA project acts as a diagnostic utility to interact with and inspect JSON payloads exchanged with the Maestro BPMN engine. It helps trace, validate, and log process data (e.g., \u0022ping/pong\u0022 objects) by exposing internal structure via recursive logging and safe fallback handling, enabling faster debugging and schema exploration.",
+                        "images": [],
+                        "dependencies": {
+                            "UiPath.IntegrationService.Activities": "1.15.0",
+                            "UiPath.System.Activities": "25.6.1",
+                            "UiPath.WebAPI.Activities": "1.21.1"
+                        },
+                        "studioVersion": "24.11.0.0",
+                        "projectVersion": "1.0.0",
+                        "targetFrameworkValue": "Portable"
                     }
                 ]
             },

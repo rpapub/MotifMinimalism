@@ -1,0 +1,162 @@
+{
+  "schema_version": "",
+  "solution_examples": {
+    "690cc227-8a9a-4531-ea80-08ddc3d563ae": {
+      "CreatedAt": "",
+      "Name": "",
+      "educational": {
+        "estimated_time_minutes": 0,
+        "goals": [],
+        "level": "",
+        "prerequisites": []
+      },
+      "publishing": {
+        "audience": [],
+        "authors": [
+          "Christian Prior-Mamulyan"
+        ],
+        "created": "",
+        "last_updated": "",
+        "render": {
+          "layout": "",
+          "permalink": ""
+        },
+        "slug": "",
+        "status": "",
+        "summary": "",
+        "tags": [],
+        "title": "",
+        "visibility": ""
+      },
+      "runtime_construct": {
+        "artifact_version": "",
+        "category": "",
+        "compatibility": "",
+        "design_tool_versions": [],
+        "edge_cases": [],
+        "execution_phase": "",
+        "inputs": "",
+        "observability": "",
+        "outputs": "",
+        "platform_constraints": "",
+        "runtime_versions": [],
+        "source_commit": "",
+        "tags": [],
+        "tech_stack": []
+      },
+      "solution": {
+        "Authors": [
+          "Christian Prior-Mamulyan"
+        ],
+        "Description": "",
+        "DocVersion": "",
+        "DownloadUrls": [
+          "/webpage/download/FlowControl_690cc227.uis"
+        ],
+        "Name": "",
+        "Projects": [
+          {
+            "Type": "ProcessOrchestration",
+            "ProjectRelativePath": "LoopingAsPerDocs/project.uiproj",
+            "Id": "5d7ff0e8-083f-4365-ad86-b2b5e72bae32",
+            "Name": "LoopingAsPerDocs",
+            "Description": "The vendor documentation states: To handle iteration-like tasks (\u2026) you can use Parallel or Sequential markers",
+            "images": [],
+            "inputs": {
+              "type": "object",
+              "properties": {
+                "Request": {
+                  "type": "object",
+                  "properties": {
+                    "version": {
+                      "type": "string"
+                    },
+                    "correlationId": {
+                      "type": "string"
+                    },
+                    "requestId": {
+                      "type": "string"
+                    },
+                    "timestamp": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "logContext": {
+                      "type": "object",
+                      "properties": {
+                        "env": {
+                          "type": "string"
+                        },
+                        "component": {
+                          "type": "string"
+                        },
+                        "user": {
+                          "type": "string"
+                        }
+                      },
+                      "required": []
+                    },
+                    "payload": {
+                      "type": "object",
+                      "properties": {
+                        "keyWithItems": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "taskId": {
+                                "type": "string"
+                              },
+                              "department": {
+                                "type": "string"
+                              },
+                              "action": {
+                                "type": "string"
+                              },
+                              "dueDate": {
+                                "type": "string",
+                                "format": "date"
+                              },
+                              "assignedTo": {
+                                "type": "string"
+                              },
+                              "priority": {
+                                "type": "string"
+                              }
+                            },
+                            "required": []
+                          }
+                        }
+                      },
+                      "required": []
+                    }
+                  },
+                  "required": []
+                }
+              },
+              "required": []
+            },
+            "outputs": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        ],
+        "SolutionId": "",
+        "StudioMinVersion": "",
+        "created_at": "",
+        "images1": [],
+        "tech_stack": {
+          "account_type": "COMMUNITY",
+          "design_tool_versions": [
+            "UiPath Studio Web 9e669382d",
+            "https://uipath-apps-prdcom.azureedge.net/assetsdesignermfe/2025.7.14-11.8.26-s171.5d2e8d21b/v18/designerRemoteEntry.js?hash=2025.7.14-11.8.26-s171.5d2e8d21b"
+          ],
+          "name": "UiPath Automation Cloud",
+          "orchestrator_version": "2024.10.0-s171",
+          "studio_version": "9e669382d"
+        }
+      }
+    }
+  }
+}
