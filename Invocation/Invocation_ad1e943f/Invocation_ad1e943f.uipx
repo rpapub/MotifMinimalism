@@ -5,22 +5,27 @@
   "Projects": [
     {
       "Type": "Process",
-      "ProjectRelativePath": "MinimalMetapatternsUtils/project.uiproj",
+      "ProjectRelativePath": "MotifMinimalism/project.uiproj",
       "Id": "02a08226-6c4b-461e-980b-cdb86636490d"
     },
     {
       "Type": "ProcessOrchestration",
-      "ProjectRelativePath": "InvocationAndParameterPassing/project.uiproj",
+      "ProjectRelativePath": "VersionString/project.uiproj",
+      "Id": "e7b5240f-c1db-4e45-ad39-3f31ed4efaec"
+    },
+    {
+      "Type": "ProcessOrchestration",
+      "ProjectRelativePath": "MultipleEntrypoints/project.uiproj",
       "Id": "01147932-e6f2-4582-ad41-dba06920c327"
     },
     {
       "Type": "ProcessOrchestration",
-      "ProjectRelativePath": "RequestJObjectIsolated/project.uiproj",
+      "ProjectRelativePath": "RequestJObject/project.uiproj",
       "Id": "635b364c-eb84-48e4-a065-519243f050bc"
     },
     {
       "Type": "ProcessOrchestration",
-      "ProjectRelativePath": "VersionAndRequestJObjectIsolated/project.uiproj",
+      "ProjectRelativePath": "VersionAndRequestJObject/project.uiproj",
       "Id": "07685722-bcba-4e9b-a91e-97809659ba84"
     }
   ]

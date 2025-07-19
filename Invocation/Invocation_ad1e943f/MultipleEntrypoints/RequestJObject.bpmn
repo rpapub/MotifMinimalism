@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:uipath="http://uipath.org/schema/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="sample-diagram" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL" exporter="UiPath Studio Web (https://uipath.com)" exporterVersion="b1501e12">
   <bpmn:process id="Process_1" name="InitializationWithRequestJObjectArgument" isExecutable="false">
+    <bpmn:documentation>This example demonstrates how to pass a complex JSON object into the trigger. It illustrates how structured input is received and processed during runtime.</bpmn:documentation>
     <bpmn:extensionElements>
       <uipath:variables version="v1">
         <uipath:input id="vUGEe3yYX" name="Request" type="jsonSchema" elementId="Event_start" default="{&#34;version&#34;:&#34;v1&#34;,&#34;payload&#34;:{}}"><![CDATA[{"type":"object","$schema":"http://json-schema.org/draft-07/schema#","properties":{"version":{"type":"string"},"correlationId":{"type":"string"},"requestId":{"type":"string"},"timestamp":{"type":"string"},"logContext":{"type":"object"},"payload":{"type":"object"}}}]]></uipath:input>
@@ -11,8 +12,8 @@
       <uipath:bindings version="v1">
         <uipath:binding id="br3gZAo9c" name="folderPath" type="string" default="Solution Folder" resource="process" resourceKey="Solution Folder.Logger" propertyAttribute="folderPath" />
         <uipath:binding id="bWaPeEuaX" name="name" type="string" default="Logger" resource="process" resourceKey="Solution Folder.Logger" propertyAttribute="name" />
-        <uipath:binding id="bRr5puQ7P" name="folderPath" type="string" default="Solution Folder" resource="process" resourceKey="Solution Folder.MinimalMetapatternsUtils" propertyAttribute="folderPath" />
-        <uipath:binding id="bqVPo8w0f" name="name" type="string" default="MinimalMetapatternsUtils" resource="process" resourceKey="Solution Folder.MinimalMetapatternsUtils" propertyAttribute="name" />
+        <uipath:binding id="bRr5puQ7P" name="folderPath" type="string" default="Solution Folder" resource="process" resourceKey="Solution Folder.MotifMinimalism" propertyAttribute="folderPath" />
+        <uipath:binding id="bqVPo8w0f" name="name" type="string" default="MotifMinimalism" resource="process" resourceKey="Solution Folder.MotifMinimalism" propertyAttribute="name" />
       </uipath:bindings>
     </bpmn:extensionElements>
     <bpmn:startEvent id="Event_start" name="Start event RequestJObject">

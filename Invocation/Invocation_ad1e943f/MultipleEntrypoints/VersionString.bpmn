@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:uipath="http://uipath.org/schema/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="sample-diagram" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL" exporter="UiPath Studio Web (https://uipath.com)" exporterVersion="b1501e12">
   <bpmn:process id="Process_1" name="InitializationWithVersionStringArgument" isExecutable="false">
+    <bpmn:documentation>This example demonstrates how to pass inputs into the trigger. It covers three entrypoints: passing a simple string, passing a complex JSON object, and passing both together. The goal is to test whether such a code structure executes correctly throughout the platform.</bpmn:documentation>
     <bpmn:extensionElements>
       <uipath:variables version="v1">
         <uipath:input id="vWhDfyu9V" name="Version" type="string" elementId="Event_start" default="v1" />
         <uipath:inputOutput id="vL2i7i5eG" name="Version" type="string" elementId="Event_start" />
       </uipath:variables>
       <uipath:bindings version="v1">
-        <uipath:binding id="brM211DHF" name="folderPath" type="string" default="Solution Folder" resource="process" resourceKey="Solution Folder.MinimalMetapatternsUtils" propertyAttribute="folderPath" />
-        <uipath:binding id="bCLyWaimd" name="name" type="string" default="MinimalMetapatternsUtils" resource="process" resourceKey="Solution Folder.MinimalMetapatternsUtils" propertyAttribute="name" />
+        <uipath:binding id="brM211DHF" name="folderPath" type="string" default="Solution Folder" resource="process" resourceKey="Solution Folder.MotifMinimalism" propertyAttribute="folderPath" />
+        <uipath:binding id="bCLyWaimd" name="name" type="string" default="MotifMinimalism" resource="process" resourceKey="Solution Folder.MotifMinimalism" propertyAttribute="name" />
       </uipath:bindings>
     </bpmn:extensionElements>
     <bpmn:startEvent id="Event_start" name="Start event VersionString">

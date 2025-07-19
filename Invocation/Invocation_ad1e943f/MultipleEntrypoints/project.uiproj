@@ -1,0 +1,6 @@
+{
+  "ProjectType": "ProcessOrchestration",
+  "Name": "MultipleEntrypoints",
+  "Description": null,
+  "MainFile": null
+}

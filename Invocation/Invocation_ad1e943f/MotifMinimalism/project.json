@@ -1,5 +1,5 @@
 {
-  "name": "MinimalMetapatternsUtils",
+  "name": "MotifMinimalism",
   "projectId": "2e73a878-db77-498e-b02f-0037a3ecf454",
   "previousProjectId": "223d00fe-3b65-46ad-a13b-2aa3fd33d5bc",
   "description": "This RPA project acts as a diagnostic utility to interact with and inspect JSON payloads exchanged with the Maestro BPMN engine. It helps trace, validate, and log process data (e.g., \"ping/pong\" objects) by exposing internal structure via recursive logging and safe fallback handling, enabling faster debugging and schema exploration.",

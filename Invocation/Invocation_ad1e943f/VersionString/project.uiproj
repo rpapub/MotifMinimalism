@@ -1,6 +1,6 @@
 {
   "ProjectType": "ProcessOrchestration",
-  "Name": "InvocationAndParameterPassing",
+  "Name": "VersionString",
   "Description": null,
   "MainFile": null
 }

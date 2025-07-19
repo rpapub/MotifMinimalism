@@ -1,6 +1,6 @@
 {
   "ProjectType": "ProcessOrchestration",
-  "Name": "VersionAndRequestJObjectIsolated",
+  "Name": "VersionAndRequestJObject",
   "Description": null,
   "MainFile": null
 }
