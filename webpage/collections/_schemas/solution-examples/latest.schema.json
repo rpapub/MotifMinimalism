@@ -1,0 +1,267 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://rpapub.github.io/MotifMinimalism/schemas/solution-examples/v0.0.1.schema.json",
+    "title": "Solution Examples Collection",
+    "type": "object",
+    "properties": {
+        "schema_version": {
+            "type": "string",
+            "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "solution_examples": {
+            "type": "object",
+            "patternProperties": {
+                "^[a-f0-9\\-]{36}$": {
+                    "type": "object",
+                    "properties": {
+                        "Name": {
+                            "type": "string"
+                        },
+                        "CreatedAt": {
+                            "type": "string",
+                            "format": "date-time"
+                        },
+                        "solution": {
+                            "type": "object",
+                            "properties": {
+                                "SolutionId": {
+                                    "type": "string"
+                                },
+                                "DownloadUrls": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "Name": {
+                                    "type": "string"
+                                },
+                                "Description": {
+                                    "type": "string"
+                                },
+                                "images1": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "DocVersion": {
+                                    "type": "string"
+                                },
+                                "StudioMinVersion": {
+                                    "type": "string"
+                                },
+                                "Author": {
+                                    "type": "string"
+                                },
+                                "created_at": {
+                                    "type": "string",
+                                    "format": "date-time"
+                                },
+                                "tested_with": {
+                                    "type": "object"
+                                },
+                                "tech_stack": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "design_tool_versions": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "runtime_versions": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "Projects": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "Type": {
+                                                "type": "string"
+                                            },
+                                            "ProjectRelativePath": {
+                                                "type": "string"
+                                            },
+                                            "Id": {
+                                                "type": "string",
+                                                "pattern": "^[a-f0-9\\-]{36}$"
+                                            },
+                                            "Name": {
+                                                "type": "string"
+                                            },
+                                            "Description": {
+                                                "type": "string"
+                                            },
+                                            "images": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "dependencies": {
+                                                "type": "object"
+                                            },
+                                            "studioVersion": {
+                                                "type": "string"
+                                            },
+                                            "projectVersion": {
+                                                "type": "string"
+                                            },
+                                            "targetFrameworkValue": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "additionalProperties": true
+                                    }
+                                }
+                            },
+                            "additionalProperties": true
+                        },
+                        "runtime_construct": {
+                            "type": "object",
+                            "properties": {
+                                "category": {
+                                    "type": "string"
+                                },
+                                "execution_phase": {
+                                    "type": "string"
+                                },
+                                "inputs": {
+                                    "type": "string"
+                                },
+                                "outputs": {
+                                    "type": "string"
+                                },
+                                "platform_constraints": {
+                                    "type": "string"
+                                },
+                                "observability": {
+                                    "type": "string"
+                                },
+                                "edge_cases": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "compatibility": {
+                                    "type": "string"
+                                },
+                                "artifact_version": {
+                                    "type": "string"
+                                },
+                                "source_commit": {
+                                    "type": "string"
+                                },
+                                "tags": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "additionalProperties": true
+                        },
+                        "publishing": {
+                            "type": "object",
+                            "properties": {
+                                "slug": {
+                                    "type": "string"
+                                },
+                                "title": {
+                                    "type": "string"
+                                },
+                                "summary": {
+                                    "type": "string"
+                                },
+                                "authors": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "created": {
+                                    "type": "string",
+                                    "format": "date-time"
+                                },
+                                "last_updated": {
+                                    "type": "string",
+                                    "format": "date-time"
+                                },
+                                "status": {
+                                    "type": "string"
+                                },
+                                "visibility": {
+                                    "type": "string"
+                                },
+                                "audience": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "tags": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "render": {
+                                    "type": "object",
+                                    "properties": {
+                                        "layout": {
+                                            "type": "string"
+                                        },
+                                        "permalink": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                }
+                            },
+                            "additionalProperties": false
+                        },
+                        "educational": {
+                            "type": "object",
+                            "properties": {
+                                "level": {
+                                    "type": "string"
+                                },
+                                "goals": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "prerequisites": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "estimated_time_minutes": {
+                                    "type": "number"
+                                }
+                            },
+                            "additionalProperties": false
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "required": [
+        "schema_version",
+        "solution_examples"
+    ]
+}

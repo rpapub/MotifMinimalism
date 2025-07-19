@@ -1,0 +1,47 @@
+{
+    "schema_version": "1.0.0",
+    "solution_examples": {
+        "8a7d787c-5fc9-43b0-a8e6-e32220ae3e95": {
+            "Name": "Example Collection B",
+            "CreatedAt": "2025-07-19T06:37:40.947046Z",
+            "Projects": [
+                {
+                    "Type": "Process",
+                    "Id": "6f1baad3-a85a-422c-a0cd-ac498db0e2da"
+                },
+                {
+                    "Type": "WebApp",
+                    "Id": "1c720acb-e5f3-4b08-8fff-3155aa0d8631"
+                }
+            ]
+        },
+        "6b1d0cc2-eac6-4e79-9fed-d1f1d4ae671b": {
+            "Name": "Example Collection B",
+            "CreatedAt": "2025-07-19T06:37:40.947046Z",
+            "Projects": [
+                {
+                    "Type": "Process",
+                    "Id": "91dbd867-abe7-4671-b7b1-6f5128e33e1f"
+                },
+                {
+                    "Type": "WebApp",
+                    "Id": "c6072d40-fc53-4d5d-8315-7257f03b64c2"
+                }
+            ]
+        },
+        "6ee5e39e-a8d9-4280-a8d6-dbc018d62f95": {
+            "Name": "Example Collection B",
+            "CreatedAt": "2025-07-19T06:37:40.947046Z",
+            "Projects": [
+                {
+                    "Type": "Process",
+                    "Id": "995f51fe-4230-4298-9512-10ff91deb375"
+                },
+                {
+                    "Type": "WebApp",
+                    "Id": "6aba702e-9634-4227-a219-bbed9946f2eb"
+                }
+            ]
+        }
+    }
+}

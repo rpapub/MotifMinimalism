@@ -16,6 +16,9 @@ collections:
   pages:
     output: true
     permalink: /:path
+  schemas:
+    output: true
+    permalink: /schemas/:path
   dummy:
     output: true
     permalink: /:collection/:name

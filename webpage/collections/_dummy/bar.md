@@ -1,14 +1,14 @@
 ---
 title: Invocation_ad1e943f
+uuid: ab9432af-f7ee-488d-aa93-08ddc3ac53d1
 ---
 
-{% assign sol = site.data.dummy.example.solution %}
+{% assign entry = site.data.solution_examples.merged.solution_examples[page.uuid] %}
+{% assign sol = entry.solution %}
 {% assign tested = sol.tested_with %}
 {% assign downloads = sol.DownloadUrls %}
+{% assign images = sol.images1 %}
 
-
-
-{% assign images = site.data.dummy.example.solution.images1 %}
 
 <wa-carousel pagination navigation mouse-dragging loop>
   {% for img in images %}
@@ -46,16 +46,39 @@ title: Invocation_ad1e943f
       <dt>Created At</dt>
       <dd>{{ sol.created_at }}</dd>
     </div>
-    <div class="wa-flank" style="--flank-size: 20ch;">
-      <dt>Tested With</dt>
-      <dd>
-        <ul>
-          <li><strong>Studio version:</strong> {{ tested["cloud.uipath.com_studio_version"] }}</li>
-          <li><strong>Account type:</strong> {{ tested["accountType"] }}</li>
-          <li><strong>Frontend hash:</strong> {{ tested["frontendurlhash"] }}</li>
-        </ul>
-      </dd>
-    </div>
+<div class="wa-flank" style="--flank-size: 20ch;">
+  <dt>Tech Stack</dt>
+  <dd>
+    <ul>
+      {% for item in sol.tech_stack %}
+        <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+  </dd>
+</div>
+
+<div class="wa-flank" style="--flank-size: 20ch;">
+  <dt>Design Tool Versions</dt>
+  <dd>
+    <ul>
+      {% for tool in sol.design_tool_versions %}
+        <li>{{ tool }}</li>
+      {% endfor %}
+    </ul>
+  </dd>
+</div>
+
+<div class="wa-flank" style="--flank-size: 20ch;">
+  <dt>Runtime Versions</dt>
+  <dd>
+    <ul>
+      {% for rt in sol.runtime_versions %}
+        <li>{{ rt }}</li>
+      {% endfor %}
+    </ul>
+  </dd>
+</div>
+
 <div class="wa-flank wa-align-items-start" style="--flank-size: 20ch;">
   <dt>Download</dt>
   <dd>

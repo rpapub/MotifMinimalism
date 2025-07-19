@@ -22,7 +22,8 @@
             "cloud.uipath.com_studio_version": "9e669382d",
             "accountType": "COMMUNITY",
             "microfrontend-url": "https://uipath-apps-prdcom.azureedge.net/assetsdesignermfe/2025.7.14-11.8.26-s171.5d2e8d21b/v18/designerRemoteEntry.js?hash=2025.7.14-11.8.26-s171.5d2e8d21b",
-            "frontendurlhash": "2025.7.14-11.8.26-s171.5d2e8d21b"
+            "frontendurlhash": "2025.7.14-11.8.26-s171.5d2e8d21b",
+            "Orchestrator": "2024.10.0-s171.9492"
         },
         "Projects": [
             {

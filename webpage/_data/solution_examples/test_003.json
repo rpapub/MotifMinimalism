@@ -1,0 +1,149 @@
+{
+    "schema_version": "0.0.1",
+    "solution_examples": {
+        "ab9432af-f7ee-488d-aa93-08ddc3ac53d1": {
+            "Name": "Trigger Input Binding",
+            "CreatedAt": "2025-07-19T12:45:00Z",
+            "publishing": {
+                "slug": "invocation/input-binding",
+                "title": "Trigger Input Binding (String & JSON)",
+                "summary": "Shows how triggers pass structured input into automation workflows.",
+                "authors": [
+                    "Christian Prior-Mamulyan"
+                ],
+                "created": "2025-07-18T23:24:09Z",
+                "last_updated": "2025-07-19T12:12:00Z",
+                "status": "published",
+                "visibility": "public",
+                "audience": [
+                    "developer",
+                    "architect"
+                ],
+                "tags": [
+                    "invocation",
+                    "inputs",
+                    "composition"
+                ],
+                "render": {
+                    "layout": "solution",
+                    "permalink": "/invocation/input-binding/"
+                }
+            },
+            "educational": {
+                "level": "intermediate",
+                "goals": [
+                    "Understand how to pass structured inputs to a trigger.",
+                    "Observe runtime differences between primitive and complex parameter binding."
+                ],
+                "prerequisites": [
+                    "Basic familiarity with UiPath Apps or Triggers",
+                    "JSON data structures"
+                ],
+                "estimated_time_minutes": 15
+            },
+            "solution": {
+                "SolutionId": "ab9432af-f7ee-488d-aa93-08ddc3ac53d1",
+                "DownloadUrls": [
+                    "/webpage/Invocation/Invocation_ad1e943f_v0.1.21.uis",
+                    "/webpage/Invocation/Invocation_ad1e943f_v0.1.23.uis"
+                ],
+                "Name": "Invocation_ad1e943f",
+                "Description": "This solution presents how to pass input into a trigger at the point of invocation. It includes three focused cases (passing a simple string, a complex JSON object, and both together) to showcase how input handling behaves across varying levels of complexity.",
+                "images1": [
+                    "capture_001_18072025_232409.png",
+                    "capture_003_18072025_232452.png",
+                    "capture_004_18072025_232456.png",
+                    "capture_005_18072025_232522.png",
+                    "capture_006_18072025_232531.png"
+                ],
+                "DocVersion": "1.0.0",
+                "StudioMinVersion": "2025.04.0",
+                "Author": "Christian Prior-Mamulyan",
+                "created_at": "2025-07-18T23:24:09Z",
+                "tested_with": {
+                    "cloud.uipath.com_studio_version": "9e669382d",
+                    "accountType": "COMMUNITY",
+                    "microfrontend-url": "https://uipath-apps-prdcom.azureedge.net/assetsdesignermfe/2025.7.14-11.8.26-s171.5d2e8d21b/v18/designerRemoteEntry.js?hash=2025.7.14-11.8.26-s171.5d2e8d21b",
+                    "frontendurlhash": "2025.7.14-11.8.26-s171.5d2e8d21b",
+                    "Orchestrator": "2024.10.0-s171.9492"
+                },
+                "tech_stack": [
+                    "UiPath Automation Cloud"
+                ],
+                "design_tool_versions": [
+                    "UiPath Studio Web 9e669382d",
+                    "frontendurlhash 2025.7.14-11.8.26-s171.5d2e8d21b"
+                ],
+                "runtime_versions": [
+                    "Orchestrator 2024.10.0-s171"
+                ],
+                "Projects": [
+                    {
+                        "Type": "ProcessOrchestration",
+                        "ProjectRelativePath": "VersionString/project.uiproj",
+                        "Id": "e7b5240f-c1db-4e45-ad39-3f31ed4efaec",
+                        "Name": "VersionString",
+                        "Description": "Demonstrates how to pass a simple string into a trigger.",
+                        "images": [
+                            "capture_001_18072025_232409.png",
+                            "capture_003_18072025_232452.png",
+                            "capture_004_18072025_232456.png"
+                        ]
+                    },
+                    {
+                        "Type": "ProcessOrchestration",
+                        "ProjectRelativePath": "RequestJObject/project.uiproj",
+                        "Id": "635b364c-eb84-48e4-a065-519243f050bc",
+                        "Name": "RequestJObject",
+                        "Description": "Demonstrates how to pass a complex JSON object.",
+                        "images": [
+                            "capture_005_18072025_232522.png"
+                        ]
+                    },
+                    {
+                        "Type": "ProcessOrchestration",
+                        "ProjectRelativePath": "VersionAndRequestJObject/project.uiproj",
+                        "Id": "07685722-bcba-4e9b-a91e-97809659ba84",
+                        "Name": "VersionAndRequestJObject",
+                        "Description": "Passes both a simple string and complex JSON object.",
+                        "images": [
+                            "capture_006_18072025_232531.png"
+                        ]
+                    }
+                ]
+            },
+            "runtime_construct": {
+                "category": "Invocation & Composition",
+                "execution_phase": "Invocation",
+                "inputs": "Trigger payloads: string, JSON, combined",
+                "outputs": "Downstream processing, logs, error handling",
+                "platform_constraints": "Requires compatible trigger mechanism in Apps or Orchestrator",
+                "observability": "Captured via logs and token traces",
+                "edge_cases": [
+                    "Empty input",
+                    "Type mismatch between payload and workflow argument"
+                ],
+                "compatibility": "Stable in UiPath 2025.4+ with tested orchestrator",
+                "artifact_version": "v1.0",
+                "source_commit": "9c88a71",
+                "tech_stack": [
+                    "UiPath Apps",
+                    "UiPath Orchestrator",
+                    "JSON"
+                ],
+                "design_tool_versions": [
+                    "UiPath Studio 2025.04.0"
+                ],
+                "runtime_versions": [
+                    "Orchestrator 2024.10.0-s171"
+                ],
+                "tags": [
+                    "invocation",
+                    "trigger",
+                    "data-passing",
+                    "low-code"
+                ]
+            }
+        }
+    }
+}
