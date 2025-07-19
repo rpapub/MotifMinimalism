@@ -1,6 +1,6 @@
 ---
 title: ErrorHandling_ff84fc0e
-uuid: ff84fc0e-5819-448a-ea77-08ddc3d563ae
+uuid: 690cc227-8a9a-4531-ea80-08ddc3d563ae
 ---
 
 {% assign entry = site.data.solution_examples.merged.solution_examples[page.uuid] %}

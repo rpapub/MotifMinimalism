@@ -1,0 +1,20 @@
+header {}
+
+[slot='header'] {
+    background-color: var(--wa-color-orange-50);
+    color: var(--wa-color-gray-95);
+    --wa-link-decoration-default: none;
+    border-block-end: var(--wa-border-width-s) var(--wa-border-style) var(--wa-color-surface-border);
+    /*background-color: var(--wa-color-orange-50);
+    color: var(--wa-color-gray-95);*/
+}
+
+[slot*='header'] a {
+    font-weight: var(--wa-font-weight-action);
+    color: var(--wa-color-gray-95);
+}
+
+[slot*='header'] wa-icon {
+    color: var(--solarized-base2);
+    font-size: 1.5em;
+}
