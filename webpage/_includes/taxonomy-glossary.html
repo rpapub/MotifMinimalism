@@ -1,16 +1,31 @@
 {% assign glossary_title = include.title | default: "Glossary" %}
 {% assign type_filter = include.types | default: nil %}
 
-{%- assign entries = site.data.taxonomy
-  | where_exp: "item", "item.ID and item.title"
-  | sort: "title" -%}
+{% assign entries_unsorted = site.data.taxonomy %}
+{% assign entries_sorted = entries_unsorted | sort: "title" %}
+{% assign entries_filtered = "" | split: "" %}
+
+{% for item in entries_sorted %}
+  {% if item.ID and item.title %}
+    {% assign entries_filtered = entries_filtered | push: item %}
+  {% endif %}
+{% endfor %}
 
 {% if type_filter %}
-  {% assign entries = entries | where_exp: "item", "type_filter contains item.Type" %}
+  {% assign entries_filtered_typed = "" | split: "" %}
+  {% for item in entries_filtered %}
+    {% if type_filter contains item.Type %}
+      {% assign entries_filtered_typed = entries_filtered_typed | push: item %}
+    {% endif %}
+  {% endfor %}
+  {% assign entries = entries_filtered_typed %}
+{% else %}
+  {% assign entries = entries_filtered %}
 {% endif %}
 
+
 <div class="wa-stack wa-gap-2xl">
-  <h2>{{ glossary_title }}</h2>
+  <h2>Runtime Constructs Glossary</h2>
   <dl class="wa-stack wa-gap-2xl">
     {% for item in entries %}
       <div class="wa-grid wa-gap-xs">
