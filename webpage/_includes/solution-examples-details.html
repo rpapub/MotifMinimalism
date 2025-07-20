@@ -1,0 +1,61 @@
+{% comment %}
+Renders solution metadata in a definition list layout.
+Expects input: entry (a single item from site.data.solution_examples).
+Pulls from entry.solution and related subfields.
+{% endcomment %}
+
+{% assign sol = entry.solution %}
+
+<div class="wa-stack">
+  <h3 class="wa-heading-m">Solution Info</h3>
+  <p class="wa-caption-m">Overview of the solution and download details.</p>
+  <wa-divider></wa-divider>
+
+  <dl class="wa-stack wa-gap-2xl">
+    <div class="wa-flank" style="--flank-size: 20ch;">
+      <dt>Name</dt>
+      <dd>{{ sol.Name }}</dd>
+    </div>
+
+    <div class="wa-flank wa-align-items-start" style="--flank-size: 20ch;">
+      <dt>Description</dt>
+      <dd>{{ sol.Description }}</dd>
+    </div>
+
+    <div class="wa-flank" style="--flank-size: 20ch;">
+      <dt>
+        {% if sol.Authors.size > 1 %}
+          Authors
+        {% else %}
+          Author
+        {% endif %}
+      </dt>
+      <dd>{{ sol.Authors | join: ", " }}</dd>
+    </div>
+
+    <div class="wa-flank" style="--flank-size: 20ch;">
+      <dt>Created At</dt>
+      <dd>{{ sol.created_at | date: "%Y-%m-%d" }}</dd>
+    </div>
+
+    <div class="wa-flank wa-align-items-start" style="--flank-size: 20ch;">
+      <dt>Tech Stack</dt>
+      <dd>
+        <ul>
+          <li><strong>Name:</strong> {{ sol.tech_stack.name }}</li>
+          <li><strong>Account Type:</strong> {{ sol.tech_stack.account_type }}</li>
+          <li><strong>Orchestrator Version:</strong> {{ sol.tech_stack.orchestrator_version }}</li>
+          <li><strong>Design Tool Versions:</strong>
+            <ul>
+              {% for version in sol.tech_stack.design_tool_versions %}
+                <li>{{ version }}</li>
+              {% endfor %}
+            </ul>
+          </li>
+        </ul>
+      </dd>
+    </div>
+
+    {% include solution-examples-download.html downloads=sol.DownloadUrls %}
+  </dl>
+</div>

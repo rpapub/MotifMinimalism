@@ -1,0 +1,53 @@
+ID,type,title,description,crossref,related,relatedtype,Tags
+T001,Concept,Runtime Construct,"A fundamental element that defines how logic executes, how data and control flow, and how behavior is coordinated during runtime.",,,,
+T002,Concept,Execution Semantics,,T001,"T001",alias,
+T003,Runtime Construct,Parameter Passing,"How runtime inputs are supplied to executable units.",T001,,,
+T004,Runtime Construct,Flow Control,"Directs execution paths: sequencing, branching, loops, concurrency.",T001,,,
+T005,Runtime Construct,Error Handling,"Runtime response to faults and exceptional conditions.",T001,,,
+T006,Runtime Construct,Event Handling,"Reactivity and asynchronous interaction at runtime.",T001,,,
+T007,Runtime Construct,Typing & Validation,"Enforces correctness before or at the point of execution.",T001,,,
+T008,Runtime Construct,State & Memory,"Runtime storage, context, and mutability.",T001,,,
+T009,Runtime Construct,Invocation & Composition,Execution of logic units and how they are combined.,T001,,,
+T010,Runtime Construct,Configuration,External inputs and environment settings before runtime begins.,T001,,,
+T011,Concept,Pattern Lifecycle,"Defines the lifecycle stages a software pattern can move through: draft, reviewed, adopted, deprecated.",,,,status
+T012,Concept,Publishing Status,"Indicates the state of a document in the publishing process (e.g., draft, in review, published, archived). Used to track editorial progress and reader readiness.",,,,"publishing,status"
+T013,Status,Draft,"Initial, incomplete version; not yet reviewed or published.",T011,,,status
+T014,Status,Reviewed,"Has been read and validated by at least one reviewer.",T011,,,status
+T015,Status,Adopted,"Considered stable and actively in use.",T011,,,status
+T016,Status,Deprecated,"No longer recommended; retained for reference.",T011,,,status
+T017,Status,In Review,"Submitted for editorial or peer evaluation.",T012,,,"publishing,status"
+T018,Status,Published,"Made publicly available in its current form.",T012,,,"publishing,status"
+T019,Status,Archived,"Retired from active use but kept for historical reasons.",T012,,,"publishing,status"
+T020,Concept,Educational Level,"Describes the depth or complexity of content relative to learner experience or stage. Common levels include: Beginner, Intermediate, Advanced, Expert.",,,,"education,level"
+T021,Level,Beginner,"Designed for learners with no prior background in the topic.",T020,,,"education,level"
+T022,Level,Intermediate,"Assumes basic understanding and introduces moderately complex ideas.",T020,,,"education,level"
+T023,Level,Advanced,"Targets learners with strong background knowledge.",T020,,,"education,level"
+T024,Level,Expert,"Intended for professionals or specialists.",T020,,,"education,level"
+T030,Concept,Educational Phase,"Describes the kind of learning emphasis: foundational knowledge, core competencies, or specialization.",,,,"education,phase"
+T020,Concept,Educational Level,"Describes the learner's current experience or proficiency: Beginner, Intermediate, Advanced, Expert.",,,,"education,level"
+T031,Phase,Foundation,"Focuses on introducing key terms, ideas, and basic context.",T030,,,"education,phase"
+T032,Phase,Core,"Covers essential principles, practices, and transferable methods.",T030,,,"education,phase"
+T033,Phase,Specialization,"Delves into advanced, domain-specific, or applied content.",T030,,,"education,phase"
+T040,Concept,"Minimal, Complete, Verifiable Example (MCVE)","A small, self-contained code example that clearly reproduces a problem or demonstrates a behavior. MCVE stands for: Minimal (least code necessary), Complete (contains all needed parts), and Verifiable (can be tested and confirmed by others). Used in debugging, teaching, and Q&A contexts.",,,,debugging,education,example
+
+T044,Alias,Minimal Reproducible Example (MRE),,T040,T040,synonym,debugging,example
+T045,Alias,Minimal Workable Example (MWE),,T040,T040,synonym,debugging,example
+T046,Alias,Reprex (REProducible EXample),,T040,T040,synonym,debugging,example
+
+T047,Concept,Test Case,"A specific input or set of conditions used to test software behavior. May be minimal or extensive. Often automated.",,,,testing,debugging
+T048,Concept,Code Smell,"A surface-level symptom in code that may indicate a deeper problem. Often revealed during attempts to isolate issues or create minimal examples.",,,,design,anti-pattern
+
+
+R001,Concept,UiPath Role,"A defined persona in the UiPath ecosystem representing a specific responsibility, permission scope, or contribution to the automation lifecycle. UiPath roles span platform management, solution delivery, and governance, including: Project Manager, Business Analyst, Solution Architect, RPA Developer, QA Tester, Infrastructure Engineer.",,,,"roles,persona,methodology"
+R002,Role,Project Manager,"Oversees the automation initiative, manages scope, budget, and timeline, and coordinates stakeholders across business and technical teams.",R001,,,"planning,governance"
+R003,Role,Business Analyst,"Defines business requirements, maps current and future processes, and translates them into structured specifications for automation.",R001,,,"requirements,design"
+R004,Role,Solution Architect,"Designs the technical structure of automation solutions, ensures conformance to standards, and manages high-level implementation risk.",R001,R002,complements,"architecture,design"
+R005,Role,RPA Developer,"Implements automation workflows in Studio, develops reusable components, and performs unit testing and versioning.",R001,R004,supports,"development,workflow"
+R006,Role,Infrastructure Engineer,"Sets up environments, configures Orchestrator, manages robot provisioning and security aspects.",R001,,,"deployment,platform"
+R007,Role,QA Tester,"Validates workflows against functional requirements, tests edge cases and failures, and verifies business rule compliance.",R001,R005,tests,"testing,quality"
+R008,Role,Release Manager,"Controls deployment pipelines, manages versions and rollback procedures, and coordinates production releases.",R001,R006,depends-on,"release,DevOps"
+R009,Role,Support Analyst,"Monitors bot performance, triages incidents, and maintains operational stability post-deployment.",R001,R005,maintains,"operations,maintenance"
+R010,Role,Orchestrator Administrator,"Manages roles, robots, queues, assets, schedules, and folder structures in UiPath Orchestrator.",R001,,,"orchestration,access"
+R011,Role,Document Understanding Annotator,"Labels training data and validates document processing results for machine learning models.",R001,,,"document understanding,AI"
+R012,Role,Automation Hub Program Manager,"Manages automation intake pipeline, evaluates ideas, and prioritizes investments through Automation Hub.",R001,,,"governance,ideation"
+R013,Role,Citizen Developer,"Non-technical business user who builds lightweight automations within scoped, governable environments.",R001,R005,variant,"low-code,citizen"

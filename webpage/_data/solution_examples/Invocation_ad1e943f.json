@@ -3,27 +3,33 @@
   "solution_examples": {
     "ab9432af-f7ee-488d-aa93-08ddc3ac53d1": {
       "CreatedAt": "",
-      "Name": "",
+      "Name": "Versioning the Invocation",
       "educational": {
         "estimated_time_minutes": 0,
         "goals": [],
-        "level": "",
+        "level": "Intermediate",
         "prerequisites": []
       },
       "publishing": {
-        "audience": [],
+        "audience": [
+          "Developer"
+        ],
         "authors": [
           "Christian Prior-Mamulyan"
         ],
-        "created": "",
+        "citation_ids": [
+          "mcve_explainer_page",
+          "motifminimalism_repo"
+        ],
+        "created": "2025-07-19T12:45:00Z",
         "last_updated": "",
         "render": {
           "layout": "",
-          "permalink": ""
+          "permalink": "/invocation/versioning-the-invocation/"
         },
         "slug": "",
         "status": "",
-        "summary": "",
+        "summary": "This example demonstrates how a job is invoked with input arguments, using a version parameter to prepare for future changes. The version is passed either as a simple string or embedded within a JSON object. Default values defined in Studio Web are respected by the UiPath Orchestrator at runtime.",
         "tags": [],
         "title": "",
         "visibility": ""

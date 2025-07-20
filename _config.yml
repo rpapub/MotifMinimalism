@@ -19,6 +19,9 @@ collections:
   schemas:
     output: true
     permalink: /schemas/:path
+  solution-examples:
+    output: true
+    permalink: /minimals/:slug/
   dummy:
     output: true
     permalink: /:collection/:name

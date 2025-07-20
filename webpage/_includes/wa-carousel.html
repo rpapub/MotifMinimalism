@@ -1,0 +1,19 @@
+{% comment %}
+  Usage:
+    {% include wa-carousel.html images=your_images_array %}
+{% endcomment %}
+
+{% if include.images and include.images != empty %}
+<wa-carousel pagination navigation mouse-dragging loop>
+  {% for img in include.images %}
+    {% assign base = img | split: '/' | last | split: '.' | first %}
+    {% assign alt_text = base | replace: '_', ' ' | capitalize %}
+    <wa-carousel-item>
+      <img
+        alt="{{ alt_text }}"
+        src="{{ '/assets/dummy/' | append: img | relative_url }}"
+      />
+    </wa-carousel-item>
+  {% endfor %}
+</wa-carousel>
+{% endif %}

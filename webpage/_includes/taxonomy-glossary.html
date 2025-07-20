@@ -1,0 +1,39 @@
+{% assign glossary_title = include.title | default: "Glossary" %}
+{% assign type_filter = include.types | default: nil %}
+
+{%- assign entries = site.data.taxonomy
+  | where_exp: "item", "item.ID and item.title"
+  | sort: "title" -%}
+
+{% if type_filter %}
+  {% assign entries = entries | where_exp: "item", "type_filter contains item.Type" %}
+{% endif %}
+
+<div class="wa-stack wa-gap-2xl">
+  <h2>{{ glossary_title }}</h2>
+  <dl class="wa-stack wa-gap-2xl">
+    {% for item in entries %}
+      <div class="wa-grid wa-gap-xs">
+        <dt class="wa-heading-m">{{ item.title }}</dt>
+        <dd>
+          {% if item.description %}
+            {{ item.description }}
+          {% elsif item.related %}
+            {% assign ref = site.data.taxonomy | where: "ID", item.related | first %}
+            See: <strong>{{ ref.title }}</strong>{% if item.relatedtype %} ({{ item.relatedtype }}){% endif %}
+          {% else %}
+            <em>No description available.</em>
+          {% endif %}
+
+          {% if item.crossref %}
+            {% assign parent = site.data.taxonomy | where: "ID", item.crossref | first %}
+            <br><small><em>Part of: {{ parent.title }}</em></small>
+          {% endif %}
+        </dd>
+      </div>
+      {% unless forloop.last %}
+        <wa-divider></wa-divider>
+      {% endunless %}
+    {% endfor %}
+  </dl>
+</div>

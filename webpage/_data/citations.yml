@@ -1,0 +1,60 @@
+- id: motifminimalism_repo
+  type: webpage
+  title: "MotifMinimalism GitHub Repository"
+  URL: "https://github.com/rpapub/MotifMinimalism"
+  accessed:
+    date-parts:
+      - [2025, 7, 20]
+  author:
+    - literal: "rpapub"
+  issued:
+    date-parts:
+      - [2024]
+  publisher: "GitHub"
+
+- id: mcve_explainer_page
+  type: webpage
+  title: "MCVE — Minimal, Complete, Verifiable Example"
+  URL: "https://rpapub.github.io/MotifMinimalism/explainer/mcve-minimal-complete-verifiable-example/"
+  accessed:
+    date-parts:
+      - [2025, 7, 20]
+  author:
+    - literal: "MotifMinimalism Docs"
+  issued:
+    date-parts:
+      - [2025]
+  publisher: "GitHub Pages"
+
+- id: clean_code
+  type: book
+  title: "Clean Code: A Handbook of Agile Software Craftsmanship"
+  author:
+    - family: "Martin"
+      given: "Robert C."
+  issued:
+    date-parts: [[2008]]
+  publisher: "Prentice Hall"
+  ISBN: "9780132350884"
+
+- id: taocp_vol1
+  type: book
+  title: "The Art of Computer Programming, Volume 1: Fundamental Algorithms"
+  author:
+    - family: "Knuth"
+      given: "Donald E."
+  issued:
+    date-parts: [[1997]]
+  publisher: "Addison-Wesley"
+  ISBN: "9780201896831"
+
+- id: fowler_peaa
+  type: book
+  title: "Patterns of Enterprise Application Architecture"
+  author:
+    - family: "Fowler"
+      given: "Martin"
+  issued:
+    date-parts: [[2002]]
+  publisher: "Addison-Wesley"
+  ISBN: "9780321127426"

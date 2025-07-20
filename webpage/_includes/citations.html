@@ -1,0 +1,48 @@
+{% comment %}
+Renders a list of citations. If `ids` is provided, it filters. Otherwise, outputs full bibliography.
+Usage:
+  {% include citations.html ids=page.related_citations %}
+  OR
+  {% include citations.html %}  ← outputs all from site.data.citations
+{% endcomment %}
+
+{% assign citation_list = include.ids %}
+{% if citation_list == nil %}
+  {% assign citation_list = site.data.citations | map: "id" %}
+{% endif %}
+
+<ul class="citations">
+  {% for id in citation_list %}
+    {% assign entry = site.data.citations | where: "id", id | first %}
+    {% if entry %}
+      <li>{% include citation.html entry=entry %}</li>
+    {% else %}
+      <li><em>Missing citation: {{ id }}</em></li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("[data-citation-id]").forEach(function (el) {
+      el.addEventListener("click", function () {
+        const id = el.getAttribute("data-citation-id");
+        navigator.clipboard.writeText(id).then(function () {
+          el.classList.add("copied");
+          setTimeout(() => el.classList.remove("copied"), 1500);
+        });
+      });
+    });
+  });
+</script>
+<style>
+  [data-citation-id] {
+    cursor: pointer;
+  }
+  [data-citation-id].copied::after {
+    content: " ⧉";
+    color: green;
+    font-size: 0.8em;
+    margin-left: 0.25em;
+  }
+</style>

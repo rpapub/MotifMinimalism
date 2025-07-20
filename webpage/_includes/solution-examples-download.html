@@ -1,0 +1,37 @@
+{% comment %}
+Renders a list of downloadable solution files.
+Expects input: downloads (an array of URLs, typically from solution metadata).
+Each item is shown with filename, icon, and "Download" button.
+{% endcomment %}
+
+<div class="wa-flank wa-align-items-start" style="--flank-size: 20ch;">
+  <dt>Download</dt>
+  <dd>
+    <wa-card>
+      <div class="wa-stack">
+        {% for url in downloads %}
+          <div class="wa-flank">
+            <wa-icon name="paperclip"></wa-icon>
+            <div class="wa-split">
+              <span class="wa-caption-m wa-cluster">
+                <span>{{ url | split: '/' | last }}</span>
+                <span>—</span>
+              </span>
+              <wa-button
+                appearance="plain"
+                variant="brand"
+                size="small"
+                href="{{ url | absolute_url }}"
+              >
+                Download
+              </wa-button>
+            </div>
+          </div>
+          {% unless forloop.last %}
+            <wa-divider></wa-divider>
+          {% endunless %}
+        {% endfor %}
+      </div>
+    </wa-card>
+  </dd>
+</div>

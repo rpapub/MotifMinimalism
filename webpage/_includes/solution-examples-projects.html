@@ -1,0 +1,41 @@
+{% comment %}
+Renders the list of included projects as a tab group.
+Expects input:
+  - sol: solution object containing sol.Projects (array)
+  - active: optional string (name of project tab to activate, already slugified)
+Each tab is keyed by project.Name | slugify.
+{% endcomment %}
+
+
+<wa-tab-group{% if active %} active="{{ active }}"{% endif %}>
+  {% for project in sol.Projects %}
+    {% assign tab_name = project.Name | default: "Unnamed" | slugify %}
+    <wa-tab panel="{{ tab_name }}">{{ project.Name | default: "Unnamed Project" }}</wa-tab>
+  {% endfor %}
+
+  {% for project in sol.Projects %}
+    {% assign tab_name = project.Name | default: "Unnamed" | slugify %}
+    <wa-tab-panel name="{{ tab_name }}">
+      <h3>{{ project.Name | default: "Unnamed Project" }}</h3>
+
+      <p><strong>Type:</strong> {{ project.Type }}</p>
+      <p><strong>Description:</strong> {{ project.Description }}</p>
+
+      {% if project.inputs %}
+        <h4>Inputs</h4>
+        <pre style="white-space: pre-wrap; word-break: break-word; overflow-x: auto;">
+<code class="language-json">{{ project.inputs | jsonify }}</code></pre>
+      {% endif %}
+
+      {% if project.outputs %}
+        <h4>Outputs</h4>
+        <pre style="white-space: pre-wrap; word-break: break-word; overflow-x: auto;">
+<code class="language-json">{{ project.outputs | jsonify }}</code></pre>
+      {% endif %}
+
+      {% if project.images %}
+        {% include wa-carousel.html images=project.images %}
+      {% endif %}
+    </wa-tab-panel>
+  {% endfor %}
+</wa-tab-group>

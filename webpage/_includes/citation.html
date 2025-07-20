@@ -1,0 +1,57 @@
+{% comment %}
+Renders a single citation entry.
+Supports `webpage` and `book`, fallback to generic.
+Expects input: entry (from _data/citations.yml)
+{% endcomment %}
+
+{% assign e = include.entry %}
+{% case e.type %}
+
+  {% when "webpage" %}
+    <strong>
+    <span
+        data-citation-id="{{ e.id }}"
+        style="cursor: default; text-decoration: none;"
+        title="Click to copy citation ID to clipboard"
+    >
+        {{ e.title }}
+    </span>
+    </strong><br>
+    {% if e.author %}
+      <em>
+        by {% for a in e.author %}
+          {{ a.literal }}{% unless forloop.last %}, {% endunless %}
+        {% endfor %}
+      </em><br>
+    {% endif %}
+    <a href="{{ e.URL }}">{{ e.URL }}</a><br>
+    {% if e.accessed %}
+      <small>Accessed on {{ e.accessed.date-parts[0] | join: "-" }}</small>
+    {% endif %}
+
+  {% when "book" %}
+    <strong>{{ e.title }}</strong><br>
+    {% if e.author %}
+      <em>
+        by {% for a in e.author %}
+          {{ a.given }} {{ a.family }}{% unless forloop.last %}, {% endunless %}
+        {% endfor %}
+      </em><br>
+    {% endif %}
+    {% if e.publisher %}
+      {{ e.publisher }},
+    {% endif %}
+    {% if e.issued %}
+      {{ e.issued.date-parts[0][0] }}
+    {% endif %}
+    {% if e.ISBN %}
+      <br><small>ISBN: {{ e.ISBN }}</small>
+    {% endif %}
+
+  {% else %}
+    <strong>{{ e.title }}</strong><br>
+    <em>({{ e.type }})</em>
+    {% if e.URL %}
+      <br><a href="{{ e.URL }}">{{ e.URL }}</a>
+    {% endif %}
+{% endcase %}

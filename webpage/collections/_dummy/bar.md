@@ -10,18 +10,7 @@ uuid: ab9432af-f7ee-488d-aa93-08ddc3ac53d1
 {% assign images = sol.images1 %}
 
 
-<wa-carousel pagination navigation mouse-dragging loop>
-  {% for img in images %}
-    {% assign base = img | split: '/' | last | split: '.' | first %}
-    {% assign alt_text = base | replace: '_', ' ' | capitalize %}
-    <wa-carousel-item>
-      <img
-        alt="{{ alt_text }}"
-        src="{{ '/assets/dummy/' | append: img | relative_url }}"
-      />
-    </wa-carousel-item>
-  {% endfor %}
-</wa-carousel>
+{% include wa-carousel.html images=images %}
 
 <wa-divider></wa-divider>
 
@@ -137,19 +126,7 @@ uuid: ab9432af-f7ee-488d-aa93-08ddc3ac53d1
       <p><strong>Project Version:</strong> {{ project.projectVersion }}</p>
       <p><strong>Framework:</strong> {{ project.targetFrameworkValue }}</p>-->
 
-      {% if project.images and project.images != empty %}
-        <wa-carousel pagination navigation mouse-dragging loop>
-          {% for img in project.images %}
-            {% assign alt_text = img | split: '/' | last | split: '.' | first | replace: '_', ' ' | capitalize %}
-            <wa-carousel-item>
-              <img
-                alt="{{ alt_text }}"
-                src="{{ '/assets/dummy/' | append: img | relative_url }}"
-              />
-            </wa-carousel-item>
-          {% endfor %}
-        </wa-carousel>
-      {% endif %}
+{% include wa-carousel.html images=project.images %}
     </wa-tab-panel>
   {% endfor %}
 </wa-tab-group>

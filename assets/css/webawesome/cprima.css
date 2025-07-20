@@ -18,3 +18,13 @@ header {}
     color: var(--solarized-base2);
     font-size: 1.5em;
 }
+
+img.content-img {
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: auto;
+    max-width: 640px;
+    max-height: 480px;
+    object-fit: contain;
+}
