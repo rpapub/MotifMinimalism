@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; url={{ page.redirect_to }}">
-    <link rel="canonical" href="{{ page.redirect_to }}" />
+    {% assign target = page.redirect_to | prepend: site.baseurl | prepend: site.url %}
+    <meta http-equiv="refresh" content="0; url={{ target }}">
+    <link rel="canonical" href="{{ target }}" />
   </head>
   <body>
-    <p>Redirecting to <a href="{{ page.redirect_to }}">{{ page.redirect_to }}</a></p>
+    <p>Redirecting to <a href="{{ target }}">{{ target }}</a></p>
   </body>
 </html>
