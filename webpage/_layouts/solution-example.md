@@ -32,3 +32,7 @@ layout: webawesome
 <h2>What is inside?</h2>
 
 {% include solution-examples-projects.html sol=entry.solution active=active_project %}
+
+<h2>How to use?</h2>
+
+Download the solution from the links above, import into your Automation Cloud and inspect the contents.
