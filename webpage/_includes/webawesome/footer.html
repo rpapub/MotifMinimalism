@@ -2,10 +2,21 @@
           <wa-icon name="{{ site.brand_icon_fontawesome_pro }}" style="font-size: 1.5em"></wa-icon>
           <span class="wa-heading-s">{{ site.title }}</span>
         </div>
-        <div class="wa-stack">
-          <h3 class="wa-heading-xs">About</h3>
-          <a href="https://www.linkedin.com/in/cprima/">Webmaster</a>
-        </div>
+<div class="wa-stack">
+  <h3 class="wa-heading-xs">About</h3>
+  {% for person in site.webmaster %}
+    {% assign linkedin = nil %}
+    {% for link in person.same_as %}
+      {% if link contains "linkedin.com" %}
+        {% assign linkedin = link %}
+      {% endif %}
+    {% endfor %}
+    {% assign profile_link = linkedin | default: person.url | default: "#" %}
+    <a href="{{ profile_link }}">
+      Webmaster:<br />{{ person.name }}
+    </a>
+  {% endfor %}
+</div>
         <div class="wa-stack">
           <h3 class="wa-heading-xs">Content</h3>
           <a href="{{ "/minimals/invocation/versioning-the-invocation/" | relative_url }}">PoC content</a>
@@ -30,7 +41,7 @@
         <div class="wa-stack">
           <h3 class="wa-heading-xs">Get Involved</h3>
           <a href="{{ "/community/contributing/" | relative_url }}">Contribute</a>
-          <a href="https://github.com/rpapub/MotifMinimalism/issues/">Raise Issue</a>
-          <a href="https://github.com/rpapub/MotifMinimalism/issues/new?template=documentation-improvement.yml">Improve documentation</a>
-          <a href="https://github.com/orgs/rpapub/discussions/categories/motifminimalism-general">Discuss</a>
+          <a href="{{ site.feedback_url.general }}">Raise Issue</a>
+          <a href="{{ site.feedback_url.docs }}">Improve documentation</a>
+          <a href="{{ site.discussion_url.general }}">Discuss</a>
         </div>

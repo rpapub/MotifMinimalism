@@ -1,5 +1,6 @@
 ---
 title: FAQ
+permalink: /resources/faq/
 ---
 
 <div class="wa-stack">
@@ -33,7 +34,7 @@ title: FAQ
 
 
 <div class="wa-stack">
-  <h2>PublisMetadatahing</h2>
+  <h2>Publishing</h2>
 
   <wa-details appearance="plain">
     <h3 slot="summary" class="wa-heading-m" style="margin: 0">How do I get the version of Studio Web that code was tested with?</h3>

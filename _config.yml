@@ -34,5 +34,22 @@ defaults:
 
 exclude:
   - script/
-  - webpage/collections/_pages
 
+feedback_url:
+  general: https://github.com/rpapub/MotifMinimalism/issues/
+  docs: https://github.com/rpapub/MotifMinimalism/issues/new?template=documentation-improvement.yml
+discussion_url:
+  general: https://github.com/orgs/rpapub/discussions/categories/motifminimalism-general
+
+webmaster:
+  - name: Christian Prior-Mamulyan
+    github: cprima
+    url: cprima.net
+    email: cprior@gmail.com
+    job_title: IT Enthusiast
+    same_as:
+      - https://github.com/cprima
+      - https://www.linkedin.com/in/cprima/
+    image: https://avatars.githubusercontent.com/u/943871
+    affiliation: RPA Publishing
+    description: Listening to biz, talking with IT. Thinking ahead.
