@@ -32,9 +32,13 @@ permalink: /resources/faq/
 
 
 
+<div style="margin-block: 2rem;">
+  <!-- content here -->
+</div>
+
 
 <div class="wa-stack">
-  <h2>Publishing</h2>
+  <h2>Metadata</h2>
 
   <wa-details appearance="plain">
     <h3 slot="summary" class="wa-heading-m" style="margin: 0">How do I get the version of Studio Web that code was tested with?</h3>
@@ -46,6 +50,5 @@ permalink: /resources/faq/
     <h3 slot="summary" class="wa-heading-m" style="margin: 0">How do I get the version of Orchestrator that code was tested with?</h3>
     In UiPath Orcehstrator, e.g. at the URL https://cloud.uipath.com/$organization/$tenant/orchestrator_/, Click on the user profile image link in the top right corder of the page, then the version is show. Example: Orchestrator 2024.10.0-s171.9492 
   </wa-details>
-  <wa-divider></wa-divider>
 
 </div>
