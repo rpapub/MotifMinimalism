@@ -31,3 +31,8 @@ defaults:
       path: "" # an empty string here means all files in the project
     values:
       layout: webawesome
+
+exclude:
+  - script/
+  - webpage/collections/_pages
+
