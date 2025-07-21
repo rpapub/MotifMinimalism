@@ -1,11 +1,16 @@
 {% comment %}
 Renders the list of included projects as a tab group.
+
 Expects input:
   - sol: solution object containing sol.Projects (array)
   - active: optional string (name of project tab to activate, already slugified)
-Each tab is keyed by project.Name | slugify.
-{% endcomment %}
 
+Each tab is keyed by project.Name | slugify.
+
+If a project defines `images`, a preview + dialog carousel is included using:
+  {% include wa-carousel.html images=project.images unique_id=project.Id %}
+  This ensures the carousel is isolated via a UID (project.Id or fallback).
+{% endcomment %}
 
 <wa-tab-group{% if active %} active="{{ active }}"{% endif %}>
   {% for project in sol.Projects %}
@@ -34,7 +39,8 @@ Each tab is keyed by project.Name | slugify.
       {% endif %}
 
       {% if project.images %}
-        {% include wa-carousel.html images=project.images %}
+        {% assign uid = project.Id | default: project.Name | slugify %}
+        {% include wa-carousel.html images=project.images unique_id=uid %}
       {% endif %}
     </wa-tab-panel>
   {% endfor %}

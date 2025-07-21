@@ -17,7 +17,11 @@ layout: webawesome
   <!-- content here -->
 </div>
 
-{% include wa-carousel.html images=images %}
+{%- comment -%}
+  Show a preview carousel for solution-level images with a fullscreen viewer.
+  The UUID ensures correct syncing across carousels on the same page.
+{%- endcomment -%}
+{% include wa-carousel.html images=images unique_id=page.uuid %}
 
 <div style="margin-block: 2rem;">
   <!-- content here -->

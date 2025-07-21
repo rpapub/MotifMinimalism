@@ -1,19 +1,132 @@
 {% comment %}
   Usage:
-    {% include wa-carousel.html images=your_images_array %}
+    {% include wa-carousel.html images=your_images_array unique_id=project.Id %}
+    Fallback: project.Name | slugify
+
+  This file renders two carousels:
+  1. A visible preview carousel.
+  2. A full-screen modal dialog carousel.
+
+  When the user clicks an image in the preview carousel,
+  the dialog carousel opens at the corresponding image.
+
+  When the dialog is closed, the preview carousel is synchronized
+  back to the current image shown in the dialog.
 {% endcomment %}
 
 {% if include.images and include.images != empty %}
-<wa-carousel pagination navigation mouse-dragging loop>
+{% assign uid = include.unique_id | default: 'default' %}
+
+<!-- Dialog with full carousel inside -->
+<wa-dialog
+  id="dialog-{{ uid }}"
+  label="Image Gallery"
+  light-dismiss
+  class="dialog-light-dismiss"
+  style="--width: 95vw; --spacing: 1rem;"
+>
+  <wa-carousel
+    id="dialog-carousel-{{ uid }}"
+    pagination
+    navigation
+    mouse-dragging
+    loop
+    style="max-height: 90vh;"
+  >
+    {% for img in include.images %}
+      <wa-carousel-item>
+        <img
+          src="{{ '/webpage/assets/dummy/' | append: img | relative_url }}"
+          style="max-height: 90vh; object-fit: contain; margin: auto; display: block;"
+        />
+      </wa-carousel-item>
+    {% endfor %}
+  </wa-carousel>
+
+  <wa-button slot="footer" variant="brand" data-dialog="close" style="margin-top: 1rem;">
+    Close
+  </wa-button>
+</wa-dialog>
+
+<!-- Main preview carousel -->
+<wa-carousel id="page-carousel-{{ uid }}" pagination navigation mouse-dragging loop>
   {% for img in include.images %}
     {% assign base = img | split: '/' | last | split: '.' | first %}
     {% assign alt_text = base | replace: '_', ' ' | capitalize %}
     <wa-carousel-item>
       <img
         alt="{{ alt_text }}"
+        class="carousel-preview"
         src="{{ '/webpage/assets/dummy/' | append: img | relative_url }}"
+        style="cursor: zoom-in; max-width: 100%; height: auto;"
+        data-index="{{ forloop.index0 }}"
       />
     </wa-carousel-item>
   {% endfor %}
 </wa-carousel>
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  (function () {
+    const uid = "{{ uid }}";
+
+    if (!window.__waCarousels) window.__waCarousels = {};
+    if (window.__waCarousels[uid]) return;
+    window.__waCarousels[uid] = true;
+
+    const dialog = document.getElementById("dialog-" + uid);
+    const dialogCarousel = document.getElementById("dialog-carousel-" + uid);
+    const pageCarousel = document.getElementById("page-carousel-" + uid);
+    const previews = pageCarousel?.querySelectorAll(".carousel-preview") || [];
+
+    console.log(`[${uid}] Init`);
+    console.log(`[${uid}] Found ${previews.length} previews`);
+    console.log(`[${uid}] dialogCarousel:`, dialogCarousel);
+    console.log(`[${uid}] pageCarousel:`, pageCarousel);
+
+    // Track dialog slide index
+    dialogCarousel?.addEventListener("wa-slide-change", (e) => {
+      const index = e.detail?.index;
+      if (typeof index === "number") {
+        dialog.setAttribute("data-dialog-index", index);
+        console.log(`[${uid}] → wa-slide-change: storing index ${index}`);
+      } else {
+        console.warn(`[${uid}] wa-slide-change missing index`);
+      }
+    });
+
+    // Attach preview click
+    previews.forEach((img, index) => {
+      console.log(`[${uid}] Assign click to preview[${index}] src=${img.src}`);
+
+      img.addEventListener("click", () => {
+        console.log(`[${uid}] → CLICK preview[${index}]`);
+        dialog.setAttribute("data-dialog-index", index);
+        dialog.open = true;
+
+        const showHandler = () => {
+          console.log(`[${uid}] → wa-after-show → dialogCarousel.goToSlide(${index})`);
+          dialogCarousel.goToSlide(index);
+          dialog.removeEventListener("wa-after-show", showHandler);
+        };
+        dialog.addEventListener("wa-after-show", showHandler);
+      });
+    });
+
+    // On dialog close, sync to page carousel
+    dialog.addEventListener("wa-after-hide", () => {
+      const stored = parseInt(dialog.getAttribute("data-dialog-index"), 10);
+      console.log(`[${uid}] → Dialog closed. Syncing pageCarousel to index ${stored}`);
+
+      if (typeof stored === "number" && typeof pageCarousel.goToSlide === "function") {
+        pageCarousel.goToSlide(stored);
+        console.log(`[${uid}] → pageCarousel.goToSlide(${stored})`);
+      } else {
+        console.warn(`[${uid}] → Cannot sync: invalid index or method`);
+      }
+    });
+  })();
+});
+</script>
+
 {% endif %}
