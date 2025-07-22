@@ -2,10 +2,10 @@
 Renders the list of included projects as a tab group.
 
 Expects input:
-  - sol: solution object containing sol.Projects (array)
+  - sol: solution object containing sol.projects (array)
   - active: optional string (name of project tab to activate, already slugified)
 
-Each tab is keyed by project.Name | slugify.
+Each tab is keyed by project.name | slugify.
 
 If a project defines `images`, a preview + dialog carousel is included using:
   {% include wa-carousel.html images=project.images unique_id=project.Id %}
@@ -13,18 +13,18 @@ If a project defines `images`, a preview + dialog carousel is included using:
 {% endcomment %}
 
 <wa-tab-group{% if active %} active="{{ active }}"{% endif %}>
-  {% for project in sol.Projects %}
-    {% assign tab_name = project.Name | default: "Unnamed" | slugify %}
-    <wa-tab panel="{{ tab_name }}">{{ project.Name | default: "Unnamed Project" }}</wa-tab>
+  {% for project in sol.projects %}
+    {% assign tab_name = project.name | default: "Unnamed" | slugify %}
+    <wa-tab panel="{{ tab_name }}">{{ project.name | default: "Unnamed Project" }}</wa-tab>
   {% endfor %}
 
-  {% for project in sol.Projects %}
-    {% assign tab_name = project.Name | default: "Unnamed" | slugify %}
+  {% for project in sol.projects %}
+    {% assign tab_name = project.name | default: "Unnamed" | slugify %}
     <wa-tab-panel name="{{ tab_name }}">
-      <h3>{{ project.Name | default: "Unnamed Project" }}</h3>
+      <h3>{{ project.name | default: "Unnamed Project" }}</h3>
 
-      <p><strong>Type:</strong> {{ project.Type }}</p>
-      <p><strong>Description:</strong> {{ project.Description }}</p>
+      <p><strong>Type:</strong> {{ project.type }}</p>
+      <p><strong>Description:</strong> {{ project.description }}</p>
 
       {% if project.inputs %}
         <h4>Inputs</h4>
@@ -39,7 +39,7 @@ If a project defines `images`, a preview + dialog carousel is included using:
       {% endif %}
 
       {% if project.images %}
-        {% assign uid = project.Id | default: project.Name | slugify %}
+        {% assign uid = project.id | default: project.name | slugify %}
         {% include wa-carousel.html images=project.images unique_id=uid %}
       {% endif %}
     </wa-tab-panel>

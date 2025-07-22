@@ -2,40 +2,36 @@
 layout: webawesome
 ---
 
-
 {% assign entry = site.data.solution_examples.merged.solution_examples[page.uuid] %}
 {% assign sol = entry.solution %}
-{% assign tested = sol.tested_with %}
-{% assign downloads = sol.DownloadUrls %}
-{% assign images = sol.images1 %}
+{% assign downloads = sol.download_urls %}
+{% assign images = sol.images %}
 {% assign active = page.active_project %}
-
 
 {{ entry.publishing.summary }}
 
 <div style="margin-block: 2rem;">
-  <!-- content here -->
+  <!-- Additional content -->
 </div>
 
 {%- comment -%}
-  Show a preview carousel for solution-level images with a fullscreen viewer.
-  The UUID ensures correct syncing across carousels on the same page.
+  Carousel viewer for solution-level images.
 {%- endcomment -%}
 {% include wa-carousel.html images=images unique_id=page.uuid %}
 
 <div style="margin-block: 2rem;">
-  <!-- content here -->
+  <!-- Additional content -->
 </div>
 
 {% include solution-examples-details.html entry=entry %}
 
 <div style="margin-block: 2rem;">
-  <!-- content here -->
+  <!-- Additional content -->
 </div>
 
 <h2>What is inside?</h2>
 
-{% include solution-examples-projects.html sol=entry.solution active=active_project %}
+{% include solution-examples-projects.html sol=sol active=active %}
 
 <h2>How to use?</h2>
 

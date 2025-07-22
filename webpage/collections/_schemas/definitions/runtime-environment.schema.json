@@ -1,0 +1,60 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://rpapub.github.io/MotifMinimalism/schemas/definitions/runtime-environment.schema.json",
+    "title": "Runtime Environment",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "Human-readable label for this runtime environment, for UI display."
+        },
+        "slug": {
+            "type": "string",
+            "description": "Short identifier for referencing this environment."
+        },
+        "platform": {
+            "type": "string",
+            "enum": [
+                "AutomationCloud",
+                "AutomationSuite"
+            ],
+            "description": "Underlying UiPath hosting platform."
+        },
+        "license": {
+            "type": "string",
+            "enum": [
+                "Enterprise",
+                "Community"
+            ],
+            "description": "License type used for this environment."
+        },
+        "stage": {
+            "type": "string",
+            "enum": [
+                "Development",
+                "Staging",
+                "Production",
+                "Unknown"
+            ],
+            "description": "Deployment stage or purpose."
+        },
+        "notes": {
+            "type": "string",
+            "description": "Freeform description of the environment."
+        },
+        "tags": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "Arbitrary string tags, such as component versions."
+        }
+    },
+    "required": [
+        "slug",
+        "platform",
+        "license",
+        "stage",
+        "name"
+    ]
+}

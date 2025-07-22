@@ -2,8 +2,8 @@
   "schema_version": "1.0.0",
   "solution_examples": {
     "ab9432af-f7ee-488d-aa93-08ddc3ac53d1": {
-      "CreatedAt": "",
-      "Name": "Versioning the Invocation",
+      "created_at": "",
+      "name": "Versioning the Invocation",
       "educational": {
         "estimated_time_minutes": 0,
         "goals": [],
@@ -21,7 +21,7 @@
           "mcve_explainer_page",
           "motifminimalism_repo"
         ],
-        "created": "2025-07-19T12:45:00Z",
+        "created_at": "2025-07-19T12:45:00Z",
         "last_updated": "",
         "render": {
           "layout": "",
@@ -51,31 +51,32 @@
         "tech_stack": []
       },
       "solution": {
-        "Authors": [
+        "authors": [
           "Christian Prior-Mamulyan"
         ],
-        "Description": "Shows how a job takes input arguments and makes decisions based on a version argument.",
-        "DocVersion": "",
-        "DownloadUrls": [
+        "description": "Shows how a job takes input arguments and makes decisions based on a version argument.",
+        "doc_version": "",
+        "download_urls": [
           "/webpage/download/Invocation_ad1e943f_v0.1.21.uis",
           "/webpage/download/Invocation_ad1e943f_v0.1.23.uis"
         ],
-        "Name": "Trigger Input Binding",
-        "Projects": [
+        "name": "Trigger Input Binding",
+        "projects": [
           {
-            "Type": "Process",
-            "ProjectRelativePath": "MotifMinimalism/project.uiproj",
-            "Id": "02a08226-6c4b-461e-980b-cdb86636490d",
-            "Name": "MotifMinimalism",
-            "Description": "This RPA project acts as a diagnostic utility to interact with and inspect JSON payloads exchanged with the Maestro BPMN engine. It helps trace, validate, and log process data (e.g., \"ping/pong\" objects) by exposing internal structure via recursive logging and safe fallback handling, enabling faster debugging and schema exploration.",
-            "images": []
+            "type": "Process",
+            "project_relative_path": "MotifMinimalism/project.uiproj",
+            "id": "02a08226-6c4b-461e-980b-cdb86636490d",
+            "name": "MotifMinimalism",
+            "description": "This RPA project acts as a diagnostic utility to interact with and inspect JSON payloads exchanged with the Maestro BPMN engine. It helps trace, validate, and log process data (e.g., \"ping/pong\" objects) by exposing internal structure via recursive logging and safe fallback handling, enabling faster debugging and schema exploration.",
+            "images": [],
+            "observations": []
           },
           {
-            "Type": "ProcessOrchestration",
-            "ProjectRelativePath": "VersionString/project.uiproj",
-            "Id": "e7b5240f-c1db-4e45-ad39-3f31ed4efaec",
-            "Name": "VersionString",
-            "Description": "This example demonstrates how to pass inputs into the trigger. It covers three entrypoints: passing a simple string, passing a complex JSON object, and passing both together. The goal is to test whether such a code structure executes correctly throughout the platform.",
+            "type": "ProcessOrchestration",
+            "project_relative_path": "VersionString/project.uiproj",
+            "id": "e7b5240f-c1db-4e45-ad39-3f31ed4efaec",
+            "name": "VersionString",
+            "description": "This example demonstrates how to pass inputs into the trigger. It covers three entrypoints: passing a simple string, passing a complex JSON object, and passing both together. The goal is to test whether such a code structure executes correctly throughout the platform.",
             "images": [
               "capture_001_18072025_232409.png",
               "capture_003_18072025_232452.png",
@@ -95,14 +96,15 @@
             "outputs": {
               "type": "object",
               "properties": {}
-            }
+            },
+            "observations": []
           },
           {
-            "Type": "ProcessOrchestration",
-            "ProjectRelativePath": "MultipleEntrypoints/project.uiproj",
-            "Id": "01147932-e6f2-4582-ad41-dba06920c327",
-            "Name": "MultipleEntrypoints",
-            "Description": "This example demonstrates how to pass inputs into the trigger. It covers three entrypoints: passing a simple string, passing a complex JSON object, and passing both together. The goal is to test whether such a code structure executes correctly throughout the platform.",
+            "type": "ProcessOrchestration",
+            "project_relative_path": "MultipleEntrypoints/project.uiproj",
+            "id": "01147932-e6f2-4582-ad41-dba06920c327",
+            "name": "MultipleEntrypoints",
+            "description": "This example demonstrates how to pass inputs into the trigger. It covers three entrypoints: passing a simple string, passing a complex JSON object, and passing both together. The goal is to test whether such a code structure executes correctly throughout the platform.",
             "images": [
               "capture_001_18072025_232409.png",
               "capture_003_18072025_232452.png",
@@ -124,14 +126,15 @@
             "outputs": {
               "type": "object",
               "properties": {}
-            }
+            },
+            "observations": []
           },
           {
-            "Type": "ProcessOrchestration",
-            "ProjectRelativePath": "RequestJObject/project.uiproj",
-            "Id": "635b364c-eb84-48e4-a065-519243f050bc",
-            "Name": "RequestJObject",
-            "Description": "This example demonstrates how to pass a complex JSON object into the trigger. It illustrates how structured input is received and processed during runtime.",
+            "type": "ProcessOrchestration",
+            "project_relative_path": "RequestJObject/project.uiproj",
+            "id": "635b364c-eb84-48e4-a065-519243f050bc",
+            "name": "RequestJObject",
+            "description": "This example demonstrates how to pass a complex JSON object into the trigger. It illustrates how structured input is received and processed during runtime.",
             "images": [
               "capture_005_18072025_232522.png"
             ],
@@ -144,10 +147,10 @@
                     "version": {
                       "type": "string"
                     },
-                    "correlationId": {
+                    "correlationid": {
                       "type": "string"
                     },
-                    "requestId": {
+                    "requestid": {
                       "type": "string"
                     },
                     "timestamp": {
@@ -167,14 +170,15 @@
             "outputs": {
               "type": "object",
               "properties": {}
-            }
+            },
+            "observations": []
           },
           {
-            "Type": "ProcessOrchestration",
-            "ProjectRelativePath": "VersionAndRequestJObject/project.uiproj",
-            "Id": "07685722-bcba-4e9b-a91e-97809659ba84",
-            "Name": "VersionAndRequestJObject",
-            "Description": "This example demonstrates how to pass both a simple string and a complex JSON object into the trigger. It highlights how multiple input types with differing complexity are handled in a single invocation.",
+            "type": "ProcessOrchestration",
+            "project_relative_path": "VersionAndRequestJObject/project.uiproj",
+            "id": "07685722-bcba-4e9b-a91e-97809659ba84",
+            "name": "VersionAndRequestJObject",
+            "description": "This example demonstrates how to pass both a simple string and a complex JSON object into the trigger. It highlights how multiple input types with differing complexity are handled in a single invocation.",
             "images": [
               "capture_006_18072025_232531.png"
             ],
@@ -192,10 +196,10 @@
                     "version": {
                       "type": "string"
                     },
-                    "correlationId": {
+                    "correlationid": {
                       "type": "string"
                     },
-                    "requestId": {
+                    "requestid": {
                       "type": "string"
                     },
                     "timestamp": {
@@ -215,306 +219,50 @@
             "outputs": {
               "type": "object",
               "properties": {}
-            }
+            },
+            "observations": []
           }
         ],
-        "SolutionId": "",
-        "StudioMinVersion": "",
+        "solution_id": "ab9432af-f7ee-488d-aa93-08ddc3ac53d1",
+        "studio_min_version": "",
         "created_at": "2025-07-19T12:45:00Z",
-        "images1": [
+        "images": [
           "capture_001_18072025_232409.png",
           "capture_003_18072025_232452.png",
           "capture_004_18072025_232456.png",
           "capture_005_18072025_232522.png",
           "capture_006_18072025_232531.png"
         ],
-        "tech_stack": {
-          "account_type": "COMMUNITY",
-          "design_tool_versions": [
-            "UiPath Studio Web 9e669382d",
-            "https://uipath-apps-prdcom.azureedge.net/assetsdesignermfe/2025.7.14-11.8.26-s171.5d2e8d21b/v18/designerRemoteEntry.js?hash=2025.7.14-11.8.26-s171.5d2e8d21b"
-          ],
-          "name": "UiPath Automation Cloud",
-          "orchestrator_version": "2024.10.0-s171",
-          "studio_version": "9e669382d"
-        }
-      }
-    },
-    "ff84fc0e-5819-448a-ea77-08ddc3d563ae": {
-      "CreatedAt": "",
-      "Name": "",
-      "educational": {
-        "estimated_time_minutes": 0,
-        "goals": [],
-        "level": "",
-        "prerequisites": []
-      },
-      "publishing": {
-        "audience": [],
-        "authors": [
-          "Christian Prior-Mamulyan"
-        ],
-        "created": "",
-        "last_updated": "",
-        "render": {
-          "layout": "",
-          "permalink": ""
-        },
-        "slug": "",
-        "status": "",
-        "summary": "",
-        "tags": [],
-        "title": "",
-        "visibility": ""
-      },
-      "runtime_construct": {
-        "artifact_version": "",
-        "category": "",
-        "compatibility": "",
-        "design_tool_versions": [],
-        "edge_cases": [],
-        "execution_phase": "",
-        "inputs": "",
-        "observability": "",
-        "outputs": "",
-        "platform_constraints": "",
-        "runtime_versions": [],
-        "source_commit": "",
-        "tags": [],
-        "tech_stack": []
-      },
-      "solution": {
-        "Authors": [
-          "Christian Prior-Mamulyan"
-        ],
-        "Description": "",
-        "DocVersion": "",
-        "DownloadUrls": [
-          "/webpage/download/ErrorHandling_ff84fc0e.uis"
-        ],
-        "Name": "ErrorHandling_ff84fc0e",
-        "Projects": [
-          {
-            "Type": "Process",
-            "ProjectRelativePath": "MinimalMetapatternsUtils/project.uiproj",
-            "Id": "652918b2-a4c0-442a-87b2-f4e0d9b26a1f",
-            "Name": "MinimalMetapatternsUtils",
-            "Description": "This RPA project acts as a diagnostic utility to interact with and inspect JSON payloads exchanged with the Maestro BPMN engine. It helps trace, validate, and log process data (e.g., \"ping/pong\" objects) by exposing internal structure via recursive logging and safe fallback handling, enabling faster debugging and schema exploration.",
-            "images": []
-          },
-          {
-            "Type": "ProcessOrchestration",
-            "ProjectRelativePath": "HandleReturnedStatus/project.uiproj",
-            "Id": "f235257f-fa06-45f6-9be1-c38fbb6cdbe9",
-            "Name": "HandleReturnedStatus",
-            "Description": "log out a fingerprint of tatus for inspection",
-            "images": [],
-            "inputs": {
-              "type": "object",
-              "properties": {
-                "Request": {
-                  "type": "object",
-                  "properties": {
-                    "version": {
-                      "type": "string"
-                    },
-                    "correlationId": {
-                      "type": "string"
-                    },
-                    "requestId": {
-                      "type": "string"
-                    },
-                    "timestamp": {
-                      "type": "string"
-                    },
-                    "logContext": {
-                      "type": "object"
-                    },
-                    "payload": {
-                      "type": "object"
-                    }
-                  }
-                }
-              },
-              "required": []
+        "designtime_environment": {
+          "account_type": "Community",
+          "platform_name": "UiPath Automation Cloud",
+          "design_tools": [
+            {
+              "name": "UiPath Studio Web",
+              "version": "9e669382d"
             },
-            "outputs": {
-              "type": "object",
-              "properties": {}
+            {
+              "name": "Orchestrator",
+              "version": "2024.10.0-s171"
             }
-          }
-        ],
-        "SolutionId": "",
-        "StudioMinVersion": "",
-        "created_at": "",
-        "images1": [],
-        "tech_stack": {
-          "account_type": "COMMUNITY",
-          "design_tool_versions": [
-            "UiPath Studio Web 9e669382d",
-            "https://uipath-apps-prdcom.azureedge.net/assetsdesignermfe/2025.7.14-11.8.26-s171.5d2e8d21b/v18/designerRemoteEntry.js?hash=2025.7.14-11.8.26-s171.5d2e8d21b"
-          ],
-          "name": "UiPath Automation Cloud",
-          "orchestrator_version": "2024.10.0-s171",
-          "studio_version": "9e669382d"
+          ]
         }
-      }
-    },
-    "690cc227-8a9a-4531-ea80-08ddc3d563ae": {
-      "CreatedAt": "",
-      "Name": "",
-      "educational": {
-        "estimated_time_minutes": 0,
-        "goals": [],
-        "level": "",
-        "prerequisites": []
       },
-      "publishing": {
-        "audience": [],
-        "authors": [
-          "Christian Prior-Mamulyan"
-        ],
-        "created": "",
-        "last_updated": "",
-        "render": {
-          "layout": "",
-          "permalink": ""
+      "deployment": {
+        "id": "",
+        "timestamp": "2025-07-19T12:45:00Z",
+        "runtime_environment": {
+          "slug": "cloud-com-dev",
+          "name": "Cloud Community Dev",
+          "platform": "AutomationCloud",
+          "license": "Community",
+          "stage": "Development",
+          "notes": "",
+          "tags": [
+            "orchestrator-2024.10"
+          ]
         },
-        "slug": "",
-        "status": "",
-        "summary": "",
-        "tags": [],
-        "title": "",
-        "visibility": ""
-      },
-      "runtime_construct": {
-        "artifact_version": "",
-        "category": "",
-        "compatibility": "",
-        "design_tool_versions": [],
-        "edge_cases": [],
-        "execution_phase": "",
-        "inputs": "",
-        "observability": "",
-        "outputs": "",
-        "platform_constraints": "",
-        "runtime_versions": [],
-        "source_commit": "",
-        "tags": [],
-        "tech_stack": []
-      },
-      "solution": {
-        "Authors": [
-          "Christian Prior-Mamulyan"
-        ],
-        "Description": "",
-        "DocVersion": "",
-        "DownloadUrls": [
-          "/webpage/download/FlowControl_690cc227.uis"
-        ],
-        "Name": "",
-        "Projects": [
-          {
-            "Type": "ProcessOrchestration",
-            "ProjectRelativePath": "LoopingAsPerDocs/project.uiproj",
-            "Id": "5d7ff0e8-083f-4365-ad86-b2b5e72bae32",
-            "Name": "LoopingAsPerDocs",
-            "Description": "The vendor documentation states: To handle iteration-like tasks (\u2026) you can use Parallel or Sequential markers",
-            "images": [],
-            "inputs": {
-              "type": "object",
-              "properties": {
-                "Request": {
-                  "type": "object",
-                  "properties": {
-                    "version": {
-                      "type": "string"
-                    },
-                    "correlationId": {
-                      "type": "string"
-                    },
-                    "requestId": {
-                      "type": "string"
-                    },
-                    "timestamp": {
-                      "type": "string",
-                      "format": "date-time"
-                    },
-                    "logContext": {
-                      "type": "object",
-                      "properties": {
-                        "env": {
-                          "type": "string"
-                        },
-                        "component": {
-                          "type": "string"
-                        },
-                        "user": {
-                          "type": "string"
-                        }
-                      },
-                      "required": []
-                    },
-                    "payload": {
-                      "type": "object",
-                      "properties": {
-                        "keyWithItems": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "properties": {
-                              "taskId": {
-                                "type": "string"
-                              },
-                              "department": {
-                                "type": "string"
-                              },
-                              "action": {
-                                "type": "string"
-                              },
-                              "dueDate": {
-                                "type": "string",
-                                "format": "date"
-                              },
-                              "assignedTo": {
-                                "type": "string"
-                              },
-                              "priority": {
-                                "type": "string"
-                              }
-                            },
-                            "required": []
-                          }
-                        }
-                      },
-                      "required": []
-                    }
-                  },
-                  "required": []
-                }
-              },
-              "required": []
-            },
-            "outputs": {
-              "type": "object",
-              "properties": {}
-            }
-          }
-        ],
-        "SolutionId": "",
-        "StudioMinVersion": "",
-        "created_at": "",
-        "images1": [],
-        "tech_stack": {
-          "account_type": "COMMUNITY",
-          "design_tool_versions": [
-            "UiPath Studio Web 9e669382d",
-            "https://uipath-apps-prdcom.azureedge.net/assetsdesignermfe/2025.7.14-11.8.26-s171.5d2e8d21b/v18/designerRemoteEntry.js?hash=2025.7.14-11.8.26-s171.5d2e8d21b"
-          ],
-          "name": "UiPath Automation Cloud",
-          "orchestrator_version": "2024.10.0-s171",
-          "studio_version": "9e669382d"
-        }
+        "observations": []
       }
     }
   }

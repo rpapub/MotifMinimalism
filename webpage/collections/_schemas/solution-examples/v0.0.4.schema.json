@@ -249,7 +249,9 @@
                   }
                 },
                 "solution_id": {
-                  "type": "string"
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Must match the solution_examples object key."
                 },
                 "studio_min_version": {
                   "type": "string"

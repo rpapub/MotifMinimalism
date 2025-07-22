@@ -14,23 +14,23 @@ Pulls from entry.solution and related subfields.
   <dl class="wa-stack wa-gap-2xl">
     <div class="wa-flank" style="--flank-size: 20ch;">
       <dt>Name</dt>
-      <dd>{{ sol.Name }}</dd>
+      <dd>{{ sol.name }}</dd>
     </div>
 
     <div class="wa-flank wa-align-items-start" style="--flank-size: 20ch;">
       <dt>Description</dt>
-      <dd>{{ sol.Description }}</dd>
+      <dd>{{ sol.description }}</dd>
     </div>
 
     <div class="wa-flank" style="--flank-size: 20ch;">
       <dt>
-        {% if sol.Authors.size > 1 %}
+        {% if sol.authors.size > 1 %}
           Authors
         {% else %}
           Author
         {% endif %}
       </dt>
-      <dd>{{ sol.Authors | join: ", " }}</dd>
+      <dd>{{ sol.authors | join: ", " }}</dd>
     </div>
 
     <div class="wa-flank" style="--flank-size: 20ch;">
@@ -39,23 +39,24 @@ Pulls from entry.solution and related subfields.
     </div>
 
     <div class="wa-flank wa-align-items-start" style="--flank-size: 20ch;">
-      <dt>Tech Stack</dt>
-      <dd>
-        <ul>
-          <li><strong>Name:</strong> {{ sol.tech_stack.name }}</li>
-          <li><strong>Account Type:</strong> {{ sol.tech_stack.account_type }}</li>
-          <li><strong>Orchestrator Version:</strong> {{ sol.tech_stack.orchestrator_version }}</li>
-          <li><strong>Design Tool Versions:</strong>
-            <ul>
-              {% for version in sol.tech_stack.design_tool_versions %}
-                <li>{{ version }}</li>
-              {% endfor %}
-            </ul>
-          </li>
-        </ul>
-      </dd>
+<dt>Tech Stack</dt>
+<dd>
+  <ul>
+    <li><strong>Name:</strong> {{ sol.tech_stack.name }}</li>
+    <li><strong>Account Type:</strong> {{ sol.tech_stack.account_type }}</li>
+    <li><strong>Orchestrator Version:</strong> {{ sol.tech_stack.orchestrator_version }}</li>
+    <li><strong>Design Tool Versions:</strong>
+      <ul>
+        {% for version in sol.tech_stack.design_tool_versions %}
+          <li>{{ version }}</li>
+        {% endfor %}
+      </ul>
+    </li>
+  </ul>
+</dd>
+
     </div>
 
-    {% include solution-examples-download.html downloads=sol.DownloadUrls %}
+    {% include solution-examples-download.html downloads=sol.download_urls  %}
   </dl>
 </div>
