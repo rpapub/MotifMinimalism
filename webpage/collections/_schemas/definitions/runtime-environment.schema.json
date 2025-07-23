@@ -24,13 +24,14 @@
             "type": "string",
             "enum": [
                 "Enterprise",
-                "Community"
+                "COMMUNITY"
             ],
             "description": "License type used for this environment."
         },
         "stage": {
             "type": "string",
             "enum": [
+                "Research",
                 "Development",
                 "Staging",
                 "Production",

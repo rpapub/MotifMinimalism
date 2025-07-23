@@ -17,7 +17,7 @@ layout: webawesome
 {%- comment -%}
   Carousel viewer for solution-level images.
 {%- endcomment -%}
-{% include wa-carousel.html images=images unique_id=page.uuid %}
+{% include wa-carousel.html images=images solution_id=page.uuid unique_id=page.uuid %}
 
 <div style="margin-block: 2rem;">
   <!-- Additional content -->
@@ -31,7 +31,7 @@ layout: webawesome
 
 <h2>What is inside?</h2>
 
-{% include solution-examples-projects.html sol=sol active=active %}
+{% include solution-examples-projects.html sol=sol active=active solution_id=page.uuid %}
 
 <h2>How to use?</h2>
 

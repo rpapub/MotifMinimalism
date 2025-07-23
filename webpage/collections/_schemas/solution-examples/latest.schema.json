@@ -191,6 +191,10 @@
                 "description": {
                   "type": "string"
                 },
+                "license_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
                 "doc_version": {
                   "type": "string"
                 },
@@ -223,12 +227,22 @@
                       "images": {
                         "type": "array"
                       },
-                      "inputs": {
+                      "input_schema": {
                         "type": "object",
                         "additionalProperties": true
                       },
-                      "outputs": {
+                      "input_data": {
                         "type": "object",
+                        "description": "Concrete input data for testing this project",
+                        "additionalProperties": true
+                      },
+                      "output_schema": {
+                        "type": "object",
+                        "additionalProperties": true
+                      },
+                      "output_data_expected": {
+                        "type": "object",
+                        "description": "Expected output data when executed with input_data",
                         "additionalProperties": true
                       },
                       "observations": {
@@ -249,7 +263,9 @@
                   }
                 },
                 "solution_id": {
-                  "type": "string"
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Must match the solution_examples object key."
                 },
                 "studio_min_version": {
                   "type": "string"
@@ -300,31 +316,34 @@
                 "images"
               ]
             },
-            "deployment": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "timestamp": {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                "observations": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "../definitions/observation.schema.json"
+            "deployments": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "timestamp": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "observations": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "../definitions/observation.schema.json"
+                    }
+                  },
+                  "runtime_environment": {
+                    "$ref": "../definitions/runtime-environment.schema.json"
                   }
                 },
-                "runtime_environment": {
-                  "$ref": "../definitions/runtime-environment.schema.json"
-                }
-              },
-              "required": [
-                "id",
-                "timestamp",
-                "runtime_environment"
-              ]
+                "required": [
+                  "id",
+                  "timestamp",
+                  "runtime_environment"
+                ]
+              }
             }
           },
           "required": [

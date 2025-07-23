@@ -17,10 +17,13 @@
 {% if include.images and include.images != empty %}
 {% assign uid = include.unique_id | default: 'default' %}
 
+{% assign path = "/webpage/assets/images/solution_examples/" | append: include.solution_id | append: "/" %}
+
+
 <!-- Dialog with full carousel inside -->
 <wa-dialog
   id="dialog-{{ uid }}"
-  label="Image Gallery"
+  label="&nbsp;"
   light-dismiss
   class="dialog-light-dismiss"
   style="--width: 95vw; --spacing: 1rem;"
@@ -36,7 +39,7 @@
     {% for img in include.images %}
       <wa-carousel-item>
         <img
-          src="{{ '/webpage/assets/dummy/' | append: img | relative_url }}"
+          src="{{ path | append: img | relative_url }}"
           style="max-height: 90vh; object-fit: contain; margin: auto; display: block;"
         />
       </wa-carousel-item>
@@ -57,7 +60,7 @@
       <img
         alt="{{ alt_text }}"
         class="carousel-preview"
-        src="{{ '/webpage/assets/dummy/' | append: img | relative_url }}"
+        src="{{ path | append: img | relative_url }}"
         style="cursor: zoom-in; max-width: 100%; height: auto;"
         data-index="{{ forloop.index0 }}"
       />

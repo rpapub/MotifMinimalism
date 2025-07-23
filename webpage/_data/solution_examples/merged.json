@@ -54,6 +54,7 @@
         "authors": [
           "Christian Prior-Mamulyan"
         ],
+        "license_id": "CC-BY-4.0",
         "description": "Shows how a job takes input arguments and makes decisions based on a version argument.",
         "doc_version": "",
         "download_urls": [
@@ -82,7 +83,7 @@
               "capture_003_18072025_232452.png",
               "capture_004_18072025_232456.png"
             ],
-            "inputs": {
+            "input_schema": {
               "type": "object",
               "properties": {
                 "Version": {
@@ -93,10 +94,14 @@
               },
               "required": []
             },
-            "outputs": {
+            "input_data": {
+              "Version": "v1"
+            },
+            "output_schema": {
               "type": "object",
               "properties": {}
             },
+            "output_data_expected": {},
             "observations": []
           },
           {
@@ -112,7 +117,7 @@
               "capture_005_18072025_232522.png",
               "capture_006_18072025_232531.png"
             ],
-            "inputs": {
+            "input_schema": {
               "type": "object",
               "properties": {
                 "Version": {
@@ -123,7 +128,7 @@
               },
               "required": []
             },
-            "outputs": {
+            "output_schema": {
               "type": "object",
               "properties": {}
             },
@@ -138,7 +143,7 @@
             "images": [
               "capture_005_18072025_232522.png"
             ],
-            "inputs": {
+            "input_schema": {
               "type": "object",
               "properties": {
                 "Request": {
@@ -167,7 +172,7 @@
               },
               "required": []
             },
-            "outputs": {
+            "output_schema": {
               "type": "object",
               "properties": {}
             },
@@ -182,7 +187,7 @@
             "images": [
               "capture_006_18072025_232531.png"
             ],
-            "inputs": {
+            "input_schema": {
               "type": "object",
               "properties": {
                 "Version": {
@@ -216,7 +221,7 @@
               },
               "required": []
             },
-            "outputs": {
+            "output_schema": {
               "type": "object",
               "properties": {}
             },
@@ -248,22 +253,36 @@
           ]
         }
       },
-      "deployment": {
-        "id": "",
-        "timestamp": "2025-07-19T12:45:00Z",
-        "runtime_environment": {
-          "slug": "cloud-com-dev",
-          "name": "Cloud Community Dev",
-          "platform": "AutomationCloud",
-          "license": "Community",
-          "stage": "Development",
-          "notes": "",
-          "tags": [
-            "orchestrator-2024.10"
+      "deployments": [
+        {
+          "id": "",
+          "timestamp": "2025-07-19T12:45:00Z",
+          "runtime_environment": {
+            "slug": "cloud-com-dev",
+            "name": "Automation Cloud Community",
+            "platform": "AutomationCloud",
+            "license": "COMMUNITY",
+            "stage": "Research",
+            "notes": "",
+            "tags": [
+              "Orchestrator 2024.10.0-s172.9791"
+            ]
+          },
+          "observations": [
+            {
+              "status": "error",
+              "timestamp": "2025-07-19T12:45:00Z",
+              "context": "commodo Lorem sit laboris",
+              "findings": [
+                {
+                  "message": "Multiple entrypoints visible in the job but selected entrypoint not always executed.",
+                  "severity": "low"
+                }
+              ]
+            }
           ]
-        },
-        "observations": []
-      }
+        }
+      ]
     }
   }
 }

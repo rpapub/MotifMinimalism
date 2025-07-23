@@ -27,9 +27,15 @@ If a project defines `images`, a preview + dialog carousel is included using:
       <p><strong>Description:</strong> {{ project.description }}</p>
 
       {% if project.inputs %}
-        <h4>Inputs</h4>
+        <h4>Input Schema</h4>
         <pre style="white-space: pre-wrap; word-break: break-word; overflow-x: auto;">
 <code class="language-json">{{ project.inputs | jsonify }}</code></pre>
+      {% endif %}
+
+      {% if project.input_data %}
+<h4 style="display: flex; align-items: center; gap: 0.4em;">Sample Input Data<wa-icon name="square-info" id="{{ project.id }}"></wa-icon><wa-tooltip for="{{ project.id }}" placement="right">For use in Studio Web Test configuration, or UiPath Orchestrator Job runtime arguments</wa-tooltip></h4>
+        <pre style="white-space: pre-wrap; word-break: break-word; overflow-x: auto;">
+<code class="language-json">{{ project.input_data | jsonify }}</code></pre>
       {% endif %}
 
       {% if project.outputs %}
@@ -40,7 +46,7 @@ If a project defines `images`, a preview + dialog carousel is included using:
 
       {% if project.images %}
         {% assign uid = project.id | default: project.name | slugify %}
-        {% include wa-carousel.html images=project.images unique_id=uid %}
+        {% include wa-carousel.html images=project.images solution_id=include.solution_id unique_id=uid %}
       {% endif %}
     </wa-tab-panel>
   {% endfor %}
