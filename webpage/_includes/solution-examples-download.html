@@ -4,8 +4,14 @@ Expects input: downloads (an array of URLs, typically from solution metadata).
 Each item is shown with filename, icon, and "Download" button.
 {% endcomment %}
 
+{% assign count = include.downloads | size %}
+
 <div class="wa-flank wa-align-items-start" style="--flank-size: 20ch;">
-  <dt>Download</dt>
+  <dt>  {% if count == 1 %}
+    Deliverable
+  {% else %}
+    Deliverables
+  {% endif %}</dt>
   <dd>
     <wa-card>
       <div class="wa-stack">
@@ -15,7 +21,6 @@ Each item is shown with filename, icon, and "Download" button.
             <div class="wa-split">
               <span class="wa-caption-m wa-cluster">
                 <span>{{ url | split: '/' | last }}</span>
-                <span>—</span>
               </span>
               <wa-button
                 appearance="plain"

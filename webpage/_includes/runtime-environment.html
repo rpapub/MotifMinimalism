@@ -1,0 +1,33 @@
+{% comment %}
+Outputs a single runtime environment.
+Expects: include.env
+Usage:
+  {% include runtime-environment.html env=some_env %}
+{% endcomment %}
+
+  {% if include.runtime_environment.product %}
+    <strong>{{ include.runtime_environment.vendor }} {{ include.runtime_environment.product }}</strong>
+  {% else %}
+    <strong>(no product)</strong>
+  {% endif %}
+
+  {% if include.runtime_environment.license %}
+    ({{ include.runtime_environment.license | capitalize }})
+  {% else %}
+    ( license unknown )
+  {% endif %}
+
+  <br />
+
+  {% if include.runtime_environment.stage %}
+    Stage: {{ include.runtime_environment.stage }}<br />
+  {% endif %}
+
+  {% if include.runtime_environment.tags %}
+    Tags:
+    <ul>
+      {% for tag in include.runtime_environment.tags %}
+        <li>{{ tag }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}

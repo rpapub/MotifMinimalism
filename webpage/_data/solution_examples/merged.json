@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "v0.0.4",
   "solution_examples": {
     "ab9432af-f7ee-488d-aa93-08ddc3ac53d1": {
       "created_at": "",
@@ -51,6 +51,7 @@
         "tech_stack": []
       },
       "solution": {
+        "solution_id": "ab9432af-f7ee-488d-aa93-08ddc3ac53d1",
         "authors": [
           "Christian Prior-Mamulyan"
         ],
@@ -70,7 +71,9 @@
             "name": "MotifMinimalism",
             "description": "This RPA project acts as a diagnostic utility to interact with and inspect JSON payloads exchanged with the Maestro BPMN engine. It helps trace, validate, and log process data (e.g., \"ping/pong\" objects) by exposing internal structure via recursive logging and safe fallback handling, enabling faster debugging and schema exploration.",
             "images": [],
-            "observations": []
+            "observation_ids": [
+              "obs-001"
+            ]
           },
           {
             "type": "ProcessOrchestration",
@@ -102,7 +105,9 @@
               "properties": {}
             },
             "output_data_expected": {},
-            "observations": []
+            "observation_ids": [
+              "obs-001"
+            ]
           },
           {
             "type": "ProcessOrchestration",
@@ -132,7 +137,9 @@
               "type": "object",
               "properties": {}
             },
-            "observations": []
+            "observation_ids": [
+              "obs-001"
+            ]
           },
           {
             "type": "ProcessOrchestration",
@@ -176,7 +183,9 @@
               "type": "object",
               "properties": {}
             },
-            "observations": []
+            "observation_ids": [
+              "obs-001"
+            ]
           },
           {
             "type": "ProcessOrchestration",
@@ -225,10 +234,11 @@
               "type": "object",
               "properties": {}
             },
-            "observations": []
+            "observation_ids": [
+              "obs-001"
+            ]
           }
         ],
-        "solution_id": "ab9432af-f7ee-488d-aa93-08ddc3ac53d1",
         "studio_min_version": "",
         "created_at": "2025-07-19T12:45:00Z",
         "images": [
@@ -239,7 +249,7 @@
           "capture_006_18072025_232531.png"
         ],
         "designtime_environment": {
-          "account_type": "Community",
+          "license": "COMMUNITY",
           "platform_name": "UiPath Automation Cloud",
           "design_tools": [
             {
@@ -251,13 +261,110 @@
               "version": "2024.10.0-s171"
             }
           ]
-        }
+        },
+        "resources": [
+          {
+            "kind": "process",
+            "type": "processOrchestration",
+            "key": "0efeddf7-25e5-49e5-9bba-a3c787a3d761",
+            "project_key": "e3782862-7175-437c-a184-f41cc711094e",
+            "api_version": "orchestrator.uipath.com/v1"
+          },
+          {
+            "kind": "package",
+            "type": null,
+            "key": "6b44a79b-3722-4221-94d2-8b7e59bda3d6",
+            "project_key": "e3782862-7175-437c-a184-f41cc711094e",
+            "api_version": "orchestrator.uipath.com/v1"
+          },
+          {
+            "kind": "app",
+            "type": null,
+            "key": "82d7b4d0-b915-4732-be15-25080ab37b50",
+            "project_key": "a37adf62-21ad-427a-8c7d-b3130333644b",
+            "api_version": "apps.uipath.com/v1"
+          },
+          {
+            "kind": "appVersion",
+            "type": null,
+            "key": "9cbeb2af-a223-461d-8c6e-3de71571425a",
+            "project_key": "a37adf62-21ad-427a-8c7d-b3130333644b",
+            "api_version": "apps.uipath.com/v2"
+          },
+          {
+            "kind": "process",
+            "type": "webApp",
+            "key": "c51ff1a5-27eb-4c99-9896-2b204ad47f1f",
+            "project_key": "a37adf62-21ad-427a-8c7d-b3130333644b",
+            "api_version": "orchestrator.uipath.com/v1"
+          },
+          {
+            "kind": "package",
+            "type": null,
+            "key": "d9787ea3-d521-49f1-bf9c-bba18f2e24f4",
+            "project_key": "a37adf62-21ad-427a-8c7d-b3130333644b",
+            "api_version": "orchestrator.uipath.com/v1"
+          },
+          {
+            "kind": "process",
+            "type": "agent",
+            "key": "a5da1fe1-7362-44fc-a48a-e1a390c473d1",
+            "project_key": "fe082f9d-c5bb-4f8a-bd3b-dd3d59e15134",
+            "api_version": "orchestrator.uipath.com/v1"
+          },
+          {
+            "kind": "package",
+            "type": null,
+            "key": "b75dcc7b-3c28-4723-9400-0b41daf47230",
+            "project_key": "fe082f9d-c5bb-4f8a-bd3b-dd3d59e15134",
+            "api_version": "orchestrator.uipath.com/v1"
+          },
+          {
+            "kind": "process",
+            "type": "process",
+            "key": "2f1256ca-6fe1-4d06-b948-3b9014516189",
+            "project_key": "58a0a0c4-3dba-4402-b2cd-7ea5978a8341",
+            "api_version": "orchestrator.uipath.com/v1"
+          },
+          {
+            "kind": "package",
+            "type": null,
+            "key": "151329f2-bc22-457c-8c6b-9f15f62af689",
+            "project_key": "58a0a0c4-3dba-4402-b2cd-7ea5978a8341",
+            "api_version": "orchestrator.uipath.com/v1"
+          },
+          {
+            "kind": "connection",
+            "type": "uipath-microsoft-github",
+            "key": "81a61a89-42be-4600-91f3-3c639fb426fd",
+            "project_key": null,
+            "api_version": "integrationservice.uipath.com/v1"
+          },
+          {
+            "kind": "index",
+            "type": null,
+            "key": "712a9810-7ab1-4a39-914c-969d92ec67b4",
+            "project_key": null,
+            "api_version": "ecs.uipath.com/v1"
+          }
+        ],
+        "resource_counts": [
+          {
+            "name": "ProcessOrchestration",
+            "count": 4
+          },
+          {
+            "name": "Process",
+            "count": 1
+          }
+        ]
       },
       "deployments": [
         {
           "id": "",
           "timestamp": "2025-07-19T12:45:00Z",
           "runtime_environment": {
+            "id": "cloud-com-dev",
             "slug": "cloud-com-dev",
             "name": "Automation Cloud Community",
             "platform": "AutomationCloud",
@@ -267,20 +374,109 @@
             "tags": [
               "Orchestrator 2024.10.0-s172.9791"
             ]
+          }
+        }
+      ],
+      "observations": [
+        {
+          "id": "obs-001",
+          "status": "error",
+          "timestamp": "2025-07-19T12:45:00Z",
+          "context": "",
+          "runtime_environment_ids": [
+            "cloud-community-2025-07"
+          ],
+          "input_data": {
+            "type": "object",
+            "additionalProperties": true
           },
-          "observations": [
+          "output_data_observed": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "findings": [
             {
-              "status": "error",
-              "timestamp": "2025-07-19T12:45:00Z",
-              "context": "commodo Lorem sit laboris",
-              "findings": [
-                {
-                  "message": "Multiple entrypoints visible in the job but selected entrypoint not always executed.",
-                  "severity": "low"
-                }
-              ]
+              "message": "Multiple entrypoints visible in the job but selected entrypoint not always executed.",
+              "severity": "low"
             }
           ]
+        },
+        {
+          "id": "obs-002",
+          "status": "success",
+          "timestamp": "2025-07-20T08:30:00Z",
+          "context": "lorem ipsum dolor sit amet",
+          "runtime_environment_ids": [
+            "cloud-community-2025-01"
+          ],
+          "input_data": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "output_data_observed": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "findings": []
+        },
+        {
+          "id": "obs-003",
+          "status": "error",
+          "timestamp": "2025-07-21T13:00:00Z",
+          "context": "foo bar baz execution case",
+          "runtime_environment_ids": [
+            "cloud-community-2025-07"
+          ],
+          "input_data": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "output_data_observed": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "findings": [
+            {
+              "message": "dolor sit amet error condition encountered",
+              "severity": "high"
+            }
+          ]
+        },
+        {
+          "id": "obs-004",
+          "status": "warning",
+          "timestamp": "2025-07-22T16:45:00Z",
+          "context": "test run with lorem config",
+          "input_data": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "output_data_observed": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "findings": [
+            {
+              "message": "tempor incididunt ut labore warning",
+              "severity": "medium"
+            }
+          ]
+        },
+        {
+          "id": "obs-005",
+          "status": "success",
+          "timestamp": "2025-07-23T10:15:00Z",
+          "context": "foobar baseline pass",
+          "runtime_environment_ids": [],
+          "input_data": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "output_data_observed": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "findings": []
         }
       ]
     }

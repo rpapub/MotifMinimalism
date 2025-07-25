@@ -1,0 +1,22 @@
+- id: cloud-community-2025-01
+  slug: automation-cloud-community
+  product: Automation Cloud
+  vendor: UiPath
+  platform: AutomationCloud
+  license: COMMUNITY
+  stage: Research
+  notes: ""
+  tags:
+    - Orchestrator 2024.10.0-s172.9791
+    - StudioWeb 9e669382d
+- id: cloud-community-2025-07
+  slug: automation-cloud-community
+  product: Automation Cloud
+  vendor: UiPath
+  platform: AutomationCloud
+  license: COMMUNITY
+  stage: Research
+  notes: ""
+  tags:
+    - Orchestrator 2024.10.0-s172.9791
+    - StudioWeb 9e669382d

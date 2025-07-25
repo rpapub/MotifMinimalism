@@ -4,6 +4,7 @@ Renders the list of included projects as a tab group.
 Expects input:
   - sol: solution object containing sol.projects (array)
   - active: optional string (name of project tab to activate, already slugified)
+  - observations: array of global observations (with id + context)
 
 Each tab is keyed by project.name | slugify.
 
@@ -20,8 +21,29 @@ If a project defines `images`, a preview + dialog carousel is included using:
 
   {% for project in sol.projects %}
     {% assign tab_name = project.name | default: "Unnamed" | slugify %}
-    <wa-tab-panel name="{{ tab_name }}">
-      <h3>{{ project.name | default: "Unnamed Project" }}</h3>
+
+{%- comment -%} Init filtered list {%- endcomment -%}
+{% assign project_obs = '' | split: '' %}
+{% assign matched_ids = '' | split: '' %}
+
+<!--{%- comment -%} Debug: raw IDs {%- endcomment -%}
+<p><strong>Debug:</strong> observation_ids = {{ project.observation_ids | join: ", " }}</p>
+<p><strong>Debug:</strong> total available = {{ include.observations.size }}</p>
+-->
+{% for oid in project.observation_ids %}
+  {% assign obs = include.observations | where: "id", oid | first %}
+  {% if obs %}
+    {% assign project_obs = project_obs | push: obs %}
+    {% assign matched_ids = matched_ids | push: oid %}
+  {% endif %}
+{% endfor %}
+
+
+<!--{%- comment -%} Debug: result stats {%- endcomment -%}
+<p><strong>Debug:</strong> matched = {{ matched_ids | join: ", " }} ({{ project_obs.size }})</p>
+-->
+<wa-tab-panel name="{{ tab_name }}">
+  <h3>{{ project.name | default: "Unnamed Project" }}</h3>
 
       <p><strong>Type:</strong> {{ project.type }}</p>
       <p><strong>Description:</strong> {{ project.description }}</p>
@@ -48,6 +70,11 @@ If a project defines `images`, a preview + dialog carousel is included using:
         {% assign uid = project.id | default: project.name | slugify %}
         {% include wa-carousel.html images=project.images solution_id=include.solution_id unique_id=uid %}
       {% endif %}
+
+
+  <h4>Observations</h4>
+  {% include solution-examples-observations.html observations=project_obs %}
+
     </wa-tab-panel>
   {% endfor %}
 </wa-tab-group>

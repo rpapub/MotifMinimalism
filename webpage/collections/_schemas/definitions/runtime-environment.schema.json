@@ -4,13 +4,17 @@
     "title": "Runtime Environment",
     "type": "object",
     "properties": {
+        "id": {
+            "type": "string",
+            "description": "identifier"
+        },
         "name": {
             "type": "string",
             "description": "Human-readable label for this runtime environment, for UI display."
         },
         "slug": {
             "type": "string",
-            "description": "Short identifier for referencing this environment."
+            "description": "Short identifier for referencing this environment in a URL."
         },
         "platform": {
             "type": "string",

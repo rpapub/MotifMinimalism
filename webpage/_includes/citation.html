@@ -4,54 +4,58 @@ Supports `webpage` and `book`, fallback to generic.
 Expects input: entry (from _data/citations.yml)
 {% endcomment %}
 
-{% assign e = include.entry %}
-{% case e.type %}
+{% assign c = include.citation %}
+{% case c.type %}
 
   {% when "webpage" %}
     <strong>
     <span
-        data-citation-id="{{ e.id }}"
+        data-citation-id="{{ c.id }}"
         style="cursor: default; text-decoration: none;"
         title="Click to copy citation ID to clipboard"
     >
-        {{ e.title }}
+        {{ c.title }}
     </span>
     </strong><br>
-    {% if e.author %}
+    {% if c.author %}
       <em>
-        by {% for a in e.author %}
+        by {% for a in c.author %}
           {{ a.literal }}{% unless forloop.last %}, {% endunless %}
         {% endfor %}
       </em><br>
     {% endif %}
-    <a href="{{ e.URL }}">{{ e.URL }}</a><br>
-    {% if e.accessed %}
-      <small>Accessed on {{ e.accessed.date-parts[0] | join: "-" }}</small>
+    <a href="{{ c.URL }}">{{ c.URL }}</a><br>
+    {% if c.accessed %}
+{% assign date_parts = c.accessed.date-parts[0] %}
+<small>
+  Accessed on
+  {{ date_parts[0] }}-{{ date_parts[1] | plus: 0 | prepend: "0" | slice: -2, 2 }}-{{ date_parts[2] | plus: 0 | prepend: "0" | slice: -2, 2 }}
+</small>
     {% endif %}
 
   {% when "book" %}
-    <strong>{{ e.title }}</strong><br>
-    {% if e.author %}
+    <strong>{{ c.title }}</strong><br>
+    {% if c.author %}
       <em>
-        by {% for a in e.author %}
+        by {% for a in c.author %}
           {{ a.given }} {{ a.family }}{% unless forloop.last %}, {% endunless %}
         {% endfor %}
       </em><br>
     {% endif %}
-    {% if e.publisher %}
-      {{ e.publisher }},
+    {% if c.publisher %}
+      {{ c.publisher }},
     {% endif %}
-    {% if e.issued %}
-      {{ e.issued.date-parts[0][0] }}
+    {% if c.issued %}
+      {{ c.issued.date-parts[0][0] }}
     {% endif %}
-    {% if e.ISBN %}
-      <br><small>ISBN: {{ e.ISBN }}</small>
+    {% if c.ISBN %}
+      <br><small>ISBN: {{ c.ISBN }}</small>
     {% endif %}
 
   {% else %}
-    <strong>{{ e.title }}</strong><br>
-    <em>({{ e.type }})</em>
-    {% if e.URL %}
-      <br><a href="{{ e.URL }}">{{ e.URL }}</a>
+    <strong>{{ c.title }}</strong><br>
+    <em>({{ c.type }})</em>
+    {% if c.URL %}
+      <br><a href="{{ c.URL }}">{{ c.URL }}</a>
     {% endif %}
 {% endcase %}

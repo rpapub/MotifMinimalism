@@ -1,0 +1,29 @@
+{% comment %}
+Renders a list of runtime environments.
+If `ids` is provided, it filters from site.data.runtime_environments.
+Otherwise, outputs all environments.
+Usage:
+  {% include runtime-environments.html ids=page.env_ids %}
+  OR
+  {% include runtime-environments.html %} ← outputs all from _data/runtime_environments.yml
+{% endcomment %}
+
+{% assign runtime_environment_ids = include.ids %}
+{% if runtime_environment_ids == nil %}
+  {% assign runtime_environment_ids = site.data.runtime_environments | map: "id" %}
+{% endif %}
+
+<ul class="runtime-environments">
+  {% for id in runtime_environment_ids %}
+    <li>
+      {% assign matched = site.data.runtime_environments | where: "id", id %}
+      {% assign runtime_environment = matched | first %}
+
+      {% if runtime_environment %}
+        {% include runtime-environment.html runtime_environment=runtime_environment %}
+      {% else %}
+        <em>404 Not Found: {{ id }}</em>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>

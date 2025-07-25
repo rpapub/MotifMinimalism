@@ -1,0 +1,107 @@
+{% comment %}
+Renders observations passed as an array (e.g. filtered per project or global).
+Expects input: observations (Array) passed via `include.observations`
+{% endcomment %}
+
+{% assign obs_list = include.observations %}
+
+{% if obs_list and obs_list.size > 0 %}
+  <div class="wa-grid">
+    {% for obs in obs_list %}
+    
+{% assign tooltip_id = "tooltip-" | append: obs.runtime_environment_ids.id %}
+
+      <wa-card class="card-footer">
+        <div class="wa-stack">
+  <div class="wa-split wa-align-items-center">
+    <div class="wa-cluster wa-heading-l">
+      <wa-icon name="clipboard-check"></wa-icon>
+      <h3>{{ obs.id }}</h3>
+    </div>
+    {% case obs.status %}
+      {% when 'pass' %}
+        <wa-badge variant="success">Pass</wa-badge>
+      {% when 'fail' %}
+        <wa-badge variant="warning">Fail</wa-badge>
+      {% when 'error' %}
+        <wa-badge variant="danger">Error</wa-badge>
+      {% else %}
+        <wa-badge variant="neutral">{{ obs.status | capitalize }}</wa-badge>
+    {% endcase %}
+  </div>
+
+{% if obs.context %}
+  <p class="wa-caption-l">{{ obs.context }}</p>
+{% endif %}
+
+<wa-format-date date="{{ obs.timestamp }}"></wa-format-date>
+
+
+
+
+          {% if obs.findings %}
+            <wa-divider></wa-divider>
+            <div class="wa-stack">
+              {% for finding in obs.findings %}
+
+                <div class="wa-flank">
+{% case finding.severity %}
+  {% when "low" %}
+    <wa-icon name="gauge-min" variant="light"></wa-icon>
+  {% when "medium" %}
+    <wa-icon name="gauge" variant="regular"></wa-icon>
+  {% when "high" %}
+    <wa-icon name="gauge-max" variant="solid"></wa-icon>
+  {% else %}
+    <wa-icon name="circle" variant="solid"></wa-icon>
+{% endcase %}
+                  <span class="wa-caption-m">
+                    <strong>{{ finding.severity | capitalize }}:</strong>
+                    {{ finding.message }}
+                  </span>
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+
+  <div slot="footer" class="wa-split">
+
+{% if obs.runtime_environment_ids and obs.runtime_environment_ids.size > 0 %}
+  <div class="wa-cluster">
+    {% for rid in obs.runtime_environment_ids %}
+      {% assign re = site.data.runtime_environments | where: "id", rid | first %}
+      {% if re %}
+        {% if include.random_render_id %}
+          {% capture tip_id %}re-tip-{{ include.random_render_id }}-{{ obs.id }}-{{ forloop.index }}{% endcapture %}
+          <wa-tooltip for="{{ tip_id }}">
+            <div>
+              {{ re.vendor }} {{ re.product }}<br />
+              License: {{ re.license }}<br />
+              {% for tag in re.tags %}
+                {{ tag }}<br />
+              {% endfor %}
+            </div>
+          </wa-tooltip>
+          <wa-badge id="{{ tip_id }}" variant="neutral" appearance="filled outlined" style="font-size: var(--wa-font-size-xs);">{{ re.slug }}</wa-badge>
+        {% else %}
+          <wa-badge variant="neutral" appearance="filled outlined" style="font-size: var(--wa-font-size-xs);">{{ re.slug }}</wa-badge>
+        {% endif %}
+      {% else %}
+        <wa-badge variant="neutral" appearance="filled outlined" style="font-size: var(--wa-font-size-xs);">Unknown Env: {{ rid }}</wa-badge>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% else %}
+  <div class="wa-cluster">
+  <wa-badge variant="neutral" appearance="outlined" style="font-size: var(--wa-font-size-xs);">Unknown Env</wa-badge>
+  </div>
+{% endif %}
+
+  </div>
+</wa-card>
+
+      </wa-card>
+    {% endfor %}
+  </div>
+{% endif %}

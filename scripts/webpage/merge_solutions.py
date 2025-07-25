@@ -6,7 +6,7 @@ from jsonschema import Draft202012Validator, RefResolver, ValidationError
 
 # --- Config ---
 OUTPUT_FILENAME = "merged.json"
-SCHEMA_PATH = Path("webpage/collections/_schemas/solution-examples/v0.0.4.schema.json")
+SCHEMA_PATH = Path("webpage/collections/_schemas/solution-examples/v0.0.5.schema.json")
 DEFS_DIR = SCHEMA_PATH.parent.parent / "definitions"
 
 # --- Args ---

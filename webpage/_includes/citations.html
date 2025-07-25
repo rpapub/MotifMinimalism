@@ -13,9 +13,9 @@ Usage:
 
 <ul class="citations">
   {% for id in citation_list %}
-    {% assign entry = site.data.citations | where: "id", id | first %}
-    {% if entry %}
-      <li>{% include citation.html entry=entry %}</li>
+    {% assign citation = site.data.citations | where: "id", id | first %}
+    {% if citation %}
+      <li>{% include citation.html citation=citation %}</li>
     {% else %}
       <li><em>Missing citation: {{ id }}</em></li>
     {% endif %}

@@ -7,20 +7,28 @@ Pulls from entry.solution and related subfields.
 {% assign sol = entry.solution %}
 
 <div class="wa-stack">
-  <h3 class="wa-heading-m">Solution Info</h3>
-  <p class="wa-caption-m">Overview of the solution and download details.</p>
+  <h2>Details</h2>
+  <p class="wa-caption-m">{{ sol.description }}</p>
   <wa-divider></wa-divider>
 
-  <dl class="wa-stack wa-gap-2xl">
-    <div class="wa-flank" style="--flank-size: 20ch;">
-      <dt>Name</dt>
-      <dd>{{ sol.name }}</dd>
-    </div>
+<div class="wa-flank wa-align-items-start" style="--flank-size: 20ch;">
+  <dt>Design Time</dt>
+  <dd>
+    {{ sol.designtime_environment.platform_name }} ({{ sol.designtime_environment.license | downcase | capitalize | default: "License type unknown" }})<br />
+    {% for tool in sol.designtime_environment.design_tools %}
+      {{ tool.name }} {{ tool.version }}{% unless forloop.last %}<br />{% endunless %}
+    {% endfor %}
+  </dd>
+</div>
 
-    <div class="wa-flank wa-align-items-start" style="--flank-size: 20ch;">
-      <dt>Description</dt>
-      <dd>{{ sol.description }}</dd>
-    </div>
+<div class="wa-flank wa-align-items-start" style="--flank-size: 20ch;">
+  <dt>Included</dt>
+  <dd>
+    {% for rc in sol.resource_counts %}
+      {{ rc.name }} ({{ rc.count }}){% unless forloop.last %}<br />{% endunless %}
+    {% endfor %}
+  </dd>
+</div>
 
     <div class="wa-flank" style="--flank-size: 20ch;">
       <dt>Created At</dt>

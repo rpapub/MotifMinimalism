@@ -3,6 +3,10 @@
     "$id": "https://rpapub.github.io/MotifMinimalism/schemas/definitions/observation.schema.json",
     "type": "object",
     "properties": {
+        "id": {
+            "type": "string",
+            "description": "Unique identifier for referencing this observation"
+        },
         "status": {
             "type": "string",
             "enum": [
@@ -19,6 +23,16 @@
         "context": {
             "type": "string",
             "description": "What this observation refers to (e.g., deployment, project)."
+        },
+        "input_data": {
+            "type": "object",
+            "description": "Concrete input data for testing this project",
+            "additionalProperties": true
+        },
+        "output_data_observed": {
+            "type": "object",
+            "description": "Expected output data when executed with input_data",
+            "additionalProperties": true
         },
         "findings": {
             "type": "array",

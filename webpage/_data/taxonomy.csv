@@ -51,3 +51,18 @@ R010,Role,Orchestrator Administrator,"Manages roles, robots, queues, assets, sch
 R011,Role,Document Understanding Annotator,"Labels training data and validates document processing results for machine learning models.",R001,,,"document understanding,AI"
 R012,Role,Automation Hub Program Manager,"Manages automation intake pipeline, evaluates ideas, and prioritizes investments through Automation Hub.",R001,,,"governance,ideation"
 R013,Role,Citizen Developer,"Non-technical business user who builds lightweight automations within scoped, governable environments.",R001,R005,variant,"low-code,citizen"
+
+T050,Concept,Observation,"A recorded result of testing or evaluating a solution in a defined runtime context. Observations may include status, timestamp, and findings. Typically scoped to a specific deployment instance or platform environment.",T047,"T051;T052",composed-of,testing,evaluation,validation
+T051,Concept,Observation Status,"An outcome indicator for a specific observation. Indicates whether a solution met expectations during evaluation: pass, fail, error, unknown.",T050,"T052",qualifies,testing,status
+T052,Concept,Finding,"A human-readable note or data point identified during testing or validation. Findings describe notable behaviors, mismatches, or confirmations observed during execution.",T050,,,"testing,annotation"
+
+T053,Concept,Observation Status: Values,"Defined values to categorize the outcome of an observation. Indicates evaluation results at a high level.",T051,,enumerates,status,outcome
+T054,Concept,Finding Severity: Values,"Defined levels of severity used to qualify the impact or importance of a finding noted in an observation.",T052,,enumerates,impact,severity
+V053-01,Value,Observation Status: Success,"The solution behaved as expected during evaluation.",T053,,,result
+V053-02,Value,Observation Status: Error,"A critical failure occurred during execution or evaluation.",T053,,,result
+V053-03,Value,Observation Status: Warning,"Non-critical issues were observed that may affect reliability or quality.",T053,,,result
+V053-04,Value,Observation Status: Unknown,"The outcome could not be reliably determined.",T053,,,result
+V054-01,Value,Finding Severity: Low,"Minor issue or deviation with negligible impact.",T054,,,severity
+V054-02,Value,Finding Severity: Medium,"Moderate issue potentially affecting behavior under certain conditions.",T054,,,severity
+V054-03,Value,Finding Severity: High,"Severe issue that likely compromises expected behavior.",T054,,,severity
+
