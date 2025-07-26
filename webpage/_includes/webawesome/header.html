@@ -9,8 +9,9 @@
             <wa-icon name="bars"></wa-icon>
           </wa-button>
 
+{% assign delay = site.time | date: "%s" | modulo: 8 | plus: 3 %}
 <wa-avatar label="Avatar with an image icon" style="background: var(--wa-color-orange-70);">
-<wa-icon slot="icon" name="{{ site.brand_icon_fontawesome_pro }}" variant="solid" style="color: var(--wa-color-brand-fill-loud); font-size: 1.5em; --fa-animation-delay: 3s; --fa-animation-duration: 3s; --fa-animation-iteration-count: 2;--fa-animation-timing: ease-in-out;" class="fa-flip"></wa-icon>
+<wa-icon slot="icon" name="{{ site.brand_icon_fontawesome_pro }}" variant="solid" style="color: var(--wa-color-brand-fill-loud); font-size: 1.5em; --fa-animation-delay: {{ delay }}s; --fa-animation-duration: 3s; --fa-animation-iteration-count: 2;--fa-animation-timing: ease-in-out;" class="fa-flip"></wa-icon>
 </wa-avatar>
           
           <span id="brand-name" class="wa-heading-s wa-desktop-only">{{ site.title }}</span>
