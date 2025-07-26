@@ -179,6 +179,15 @@
               },
               "required": []
             },
+            "input_data": {
+              "Request": {
+                "version": "v1",
+                "payload": {
+                  "foo": "forty-seven",
+                  "bar": 11
+                }
+              }
+            },
             "output_schema": {
               "type": "object",
               "properties": {}
@@ -229,6 +238,16 @@
                 }
               },
               "required": []
+            },
+            "input_data": {
+              "Version": "v1",
+              "Request": {
+                "version": "v1",
+                "payload": {
+                  "foo": "forty-seven",
+                  "bar": 11
+                }
+              }
             },
             "output_schema": {
               "type": "object",
@@ -403,7 +422,7 @@
         },
         {
           "id": "obs-002",
-          "status": "success",
+          "status": "pass",
           "timestamp": "2025-07-20T08:30:00Z",
           "context": "lorem ipsum dolor sit amet",
           "runtime_environment_ids": [
@@ -445,7 +464,7 @@
         },
         {
           "id": "obs-004",
-          "status": "warning",
+          "status": "fail",
           "timestamp": "2025-07-22T16:45:00Z",
           "context": "test run with lorem config",
           "input_data": {
@@ -465,7 +484,7 @@
         },
         {
           "id": "obs-005",
-          "status": "success",
+          "status": "pass",
           "timestamp": "2025-07-23T10:15:00Z",
           "context": "foobar baseline pass",
           "runtime_environment_ids": [],

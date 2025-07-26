@@ -1,5 +1,5 @@
 {
-  "schema_version": "v0.0.4",
+  "schema_version": "1.0.0",
   "solution_examples": {
     "ab9432af-f7ee-488d-aa93-08ddc3ac53d1": {
       "created_at": "",
@@ -179,6 +179,15 @@
               },
               "required": []
             },
+            "input_data": {
+              "Request": {
+                "version": "v1",
+                "payload": {
+                  "foo": "forty-seven",
+                  "bar": 11
+                }
+              }
+            },
             "output_schema": {
               "type": "object",
               "properties": {}
@@ -229,6 +238,16 @@
                 }
               },
               "required": []
+            },
+            "input_data": {
+              "Version": "v1",
+              "Request": {
+                "version": "v1",
+                "payload": {
+                  "foo": "forty-seven",
+                  "bar": 11
+                }
+              }
             },
             "output_schema": {
               "type": "object",
@@ -350,11 +369,11 @@
         ],
         "resource_counts": [
           {
-            "name": "ProcessOrchestration",
+            "name": "processOrchestration",
             "count": 4
           },
           {
-            "name": "Process",
+            "name": "process",
             "count": 1
           }
         ]
@@ -382,7 +401,7 @@
           "id": "obs-001",
           "status": "error",
           "timestamp": "2025-07-19T12:45:00Z",
-          "context": "",
+          "context": "commodo Lorem sit laboris",
           "runtime_environment_ids": [
             "cloud-community-2025-07"
           ],
@@ -403,7 +422,7 @@
         },
         {
           "id": "obs-002",
-          "status": "success",
+          "status": "pass",
           "timestamp": "2025-07-20T08:30:00Z",
           "context": "lorem ipsum dolor sit amet",
           "runtime_environment_ids": [
@@ -425,6 +444,7 @@
           "timestamp": "2025-07-21T13:00:00Z",
           "context": "foo bar baz execution case",
           "runtime_environment_ids": [
+            "cloud-community-2025-01",
             "cloud-community-2025-07"
           ],
           "input_data": {
@@ -444,7 +464,7 @@
         },
         {
           "id": "obs-004",
-          "status": "warning",
+          "status": "fail",
           "timestamp": "2025-07-22T16:45:00Z",
           "context": "test run with lorem config",
           "input_data": {
@@ -464,7 +484,7 @@
         },
         {
           "id": "obs-005",
-          "status": "success",
+          "status": "pass",
           "timestamp": "2025-07-23T10:15:00Z",
           "context": "foobar baseline pass",
           "runtime_environment_ids": [],

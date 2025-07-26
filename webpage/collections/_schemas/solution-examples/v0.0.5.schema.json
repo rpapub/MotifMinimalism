@@ -272,13 +272,19 @@
                         "type": "string"
                       },
                       "type": {
-                        "type": "string"
+                        "type": [
+                          "string",
+                          "null"
+                        ]
                       },
                       "key": {
                         "type": "string"
                       },
                       "project_key": {
-                        "type": "string"
+                        "type": [
+                          "string",
+                          "null"
+                        ]
                       },
                       "api_version": {
                         "type": "string"
@@ -404,7 +410,7 @@
             "observations": {
               "type": "array",
               "items": {
-                "$ref": "./definitions/observation.schema.json"
+                "$ref": "../definitions/observation.schema.json"
               }
             }
           },
