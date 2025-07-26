@@ -1,7 +1,7 @@
 ---
+title: Core Constructs of Software Runtime Execcutions
+permalink: /explainer/core-constructs-of-software-runtime-executions/
 ---
-
-# Core Constructs of Software Runtime
 
 Every software system, regardless of language, paradigm, or domain, relies on a minimal set of fundamental execution semantics or runtime constructs. These constructs define how logic executes, how data and control flow through a system, and how behavior is coordinated during runtime. Whether designing a programming language, workflow engine, or automation platform, support for these constructs is essential. While distinct, they operate in relation to one another and map to recurring phases of execution, from initialization and invocation to flow control, error handling, and eventual completion, reflecting both their universality and runtime ordering.
 

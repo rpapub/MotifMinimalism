@@ -1,0 +1,45 @@
+<wa-tree class="tree-with-icons">
+  {% assign open_stack = 0 %}
+
+  {% for item in site.data.navigation %}
+    {% case item.type %}
+
+    {% when "heading" %}
+      {% assign current_level = item.level | default: 1 %}
+
+      {% if open_stack >= current_level %}
+        {% assign to_close = open_stack | minus: current_level | plus: 1 %}
+        {% for i in (1..to_close) %}
+          </wa-tree-item>
+        {% endfor %}
+        {% assign open_stack = current_level %}
+      {% endif %}
+
+      <wa-tree-item expanded>
+        {{ item.title }}
+        {% if item.icon %}
+          <wa-icon name="{{ item.icon }}" variant="light"></wa-icon>
+        {% endif %}
+        {% assign open_stack = current_level %}
+
+    {% when "link" %}
+      <wa-tree-item>
+        {% if item.icon %}
+          <wa-icon name="{{ item.icon }}" variant="light"></wa-icon>
+        {% else %}
+          <wa-icon style="visibility: hidden;" variant="light"></wa-icon>
+        {% endif %}
+        {% if item.url %}
+          <a href="{{ item.url }}">{{ item.title }}</a>
+        {% else %}
+          <span class="wa-disabled">{{ item.title }}</span>
+        {% endif %}
+      </wa-tree-item>
+
+    {% endcase %}
+  {% endfor %}
+
+  {% for i in (1..open_stack) %}
+    </wa-tree-item>
+  {% endfor %}
+</wa-tree>
