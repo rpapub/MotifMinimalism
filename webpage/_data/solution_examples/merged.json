@@ -18,8 +18,8 @@
           "Christian Prior-Mamulyan"
         ],
         "citation_ids": [
-          "mcve_explainer_page",
-          "motifminimalism_repo"
+          "api_versioning_explainer_page",
+          "mcve_explainer_page"
         ],
         "created_at": "2025-07-19T12:45:00Z",
         "last_updated": "",
@@ -59,22 +59,11 @@
         "description": "Shows how a job takes input arguments and makes decisions based on a version argument.",
         "doc_version": "",
         "download_urls": [
-          "/webpage/download/Invocation_ad1e943f_v0.1.21.uis",
-          "/webpage/download/Invocation_ad1e943f_v0.1.23.uis"
+          "/webpage/download/Invocation_ad1e943f_v0.1.23.uis",
+          "/webpage/download/Invocation_ad1e943f_v0.1.21.uis"
         ],
         "name": "Trigger Input Binding",
         "projects": [
-          {
-            "type": "Process",
-            "project_relative_path": "MotifMinimalism/project.uiproj",
-            "id": "02a08226-6c4b-461e-980b-cdb86636490d",
-            "name": "MotifMinimalism",
-            "description": "This RPA project acts as a diagnostic utility to interact with and inspect JSON payloads exchanged with the Maestro BPMN engine. It helps trace, validate, and log process data (e.g., \"ping/pong\" objects) by exposing internal structure via recursive logging and safe fallback handling, enabling faster debugging and schema exploration.",
-            "images": [],
-            "observation_ids": [
-              "obs-001"
-            ]
-          },
           {
             "type": "ProcessOrchestration",
             "project_relative_path": "VersionString/project.uiproj",
@@ -105,9 +94,7 @@
               "properties": {}
             },
             "output_data_expected": {},
-            "observation_ids": [
-              "obs-001"
-            ]
+            "observation_ids": []
           },
           {
             "type": "ProcessOrchestration",
@@ -193,7 +180,7 @@
               "properties": {}
             },
             "observation_ids": [
-              "obs-001"
+              "obs-002"
             ]
           },
           {
@@ -253,9 +240,16 @@
               "type": "object",
               "properties": {}
             },
-            "observation_ids": [
-              "obs-001"
-            ]
+            "observation_ids": []
+          },
+          {
+            "type": "Process",
+            "project_relative_path": "MotifMinimalism/project.uiproj",
+            "id": "02a08226-6c4b-461e-980b-cdb86636490d",
+            "name": "MotifMinimalism",
+            "description": "This RPA project acts as a diagnostic utility to interact with and inspect JSON payloads exchanged with the Maestro BPMN engine. It helps trace, validate, and log process data (e.g., \"ping/pong\" objects) by exposing internal structure via recursive logging and safe fallback handling, enabling faster debugging and schema exploration.",
+            "images": [],
+            "observation_ids": []
           }
         ],
         "studio_min_version": "",
@@ -399,23 +393,17 @@
       "observations": [
         {
           "id": "obs-001",
-          "status": "error",
+          "status": "fail",
           "timestamp": "2025-07-19T12:45:00Z",
           "context": "commodo Lorem sit laboris",
           "runtime_environment_ids": [
             "cloud-community-2025-07"
           ],
-          "input_data": {
-            "type": "object",
-            "additionalProperties": true
-          },
-          "output_data_observed": {
-            "type": "object",
-            "additionalProperties": true
-          },
+          "input_data": {},
+          "output_data_observed": {},
           "findings": [
             {
-              "message": "Multiple entrypoints visible in the job but selected entrypoint not always executed.",
+              "message": "Multiple entrypoints become visible in Orchestrator job, but no deterministic execution of a selected entrypoint.",
               "severity": "low"
             }
           ]
@@ -423,80 +411,19 @@
         {
           "id": "obs-002",
           "status": "pass",
-          "timestamp": "2025-07-20T08:30:00Z",
-          "context": "lorem ipsum dolor sit amet",
+          "timestamp": "2025-07-19T12:45:00Z",
+          "context": "commodo Lorem sit laboris",
           "runtime_environment_ids": [
-            "cloud-community-2025-01"
-          ],
-          "input_data": {
-            "type": "object",
-            "additionalProperties": true
-          },
-          "output_data_observed": {
-            "type": "object",
-            "additionalProperties": true
-          },
-          "findings": []
-        },
-        {
-          "id": "obs-003",
-          "status": "error",
-          "timestamp": "2025-07-21T13:00:00Z",
-          "context": "foo bar baz execution case",
-          "runtime_environment_ids": [
-            "cloud-community-2025-01",
             "cloud-community-2025-07"
           ],
-          "input_data": {
-            "type": "object",
-            "additionalProperties": true
-          },
-          "output_data_observed": {
-            "type": "object",
-            "additionalProperties": true
-          },
+          "input_data": {},
+          "output_data_observed": {},
           "findings": [
             {
-              "message": "dolor sit amet error condition encountered",
-              "severity": "high"
-            }
-          ]
-        },
-        {
-          "id": "obs-004",
-          "status": "fail",
-          "timestamp": "2025-07-22T16:45:00Z",
-          "context": "test run with lorem config",
-          "input_data": {
-            "type": "object",
-            "additionalProperties": true
-          },
-          "output_data_observed": {
-            "type": "object",
-            "additionalProperties": true
-          },
-          "findings": [
-            {
-              "message": "tempor incididunt ut labore warning",
+              "message": "gateway conditions have read-only access to complex (nested) input data",
               "severity": "medium"
             }
           ]
-        },
-        {
-          "id": "obs-005",
-          "status": "pass",
-          "timestamp": "2025-07-23T10:15:00Z",
-          "context": "foobar baseline pass",
-          "runtime_environment_ids": [],
-          "input_data": {
-            "type": "object",
-            "additionalProperties": true
-          },
-          "output_data_observed": {
-            "type": "object",
-            "additionalProperties": true
-          },
-          "findings": []
         }
       ]
     }

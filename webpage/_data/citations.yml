@@ -58,3 +58,17 @@
     date-parts: [[2002]]
   publisher: "Addison-Wesley"
   ISBN: "9780321127426"
+
+- id: api_versioning_explainer_page
+  type: webpage
+  title: "Why External APIs Should Always Include a Version"
+  URL: "https://rpapub.github.io/MotifMinimalism/explainer/api-versioning/"
+  accessed:
+    date-parts:
+      - [2025, 7, 27]
+  author:
+    - literal: "MotifMinimalism Docs"
+  issued:
+    date-parts:
+      - [2025]
+  publisher: "GitHub Pages"
