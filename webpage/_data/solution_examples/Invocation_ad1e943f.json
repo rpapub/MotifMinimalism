@@ -395,7 +395,7 @@
           "id": "obs-001",
           "status": "fail",
           "timestamp": "2025-07-19T12:45:00Z",
-          "context": "commodo Lorem sit laboris",
+          "context": "",
           "runtime_environment_ids": [
             "cloud-community-2025-07"
           ],
@@ -412,7 +412,7 @@
           "id": "obs-002",
           "status": "pass",
           "timestamp": "2025-07-19T12:45:00Z",
-          "context": "commodo Lorem sit laboris",
+          "context": "",
           "runtime_environment_ids": [
             "cloud-community-2025-07"
           ],
